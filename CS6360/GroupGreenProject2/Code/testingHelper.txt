@@ -1,0 +1,45 @@
+Testing table creation, insertion, and index creation:
+
+CREATE TABLE Persons (PersonID int, SSN int, LastName TEXT);
+
+Insert into Persons values (101, 10000012, "Davis 1233452342 Hello world");
+Insert into Persons values (102, 10000012, "Davis 1233452342 Hello world");
+Insert into Persons values (103, 10000012, "Davis 1233452342 Hello world");
+Insert into Persons values (104, 10000012, "Davis 1233452342 Hello world");
+Insert into Persons values (105, 10000012, "Davis 1233452342 Hello world");
+Insert into Persons values (106, 10000012, "Davis 1233452342 Hello world");
+Insert into Persons values (107, 10000012, "Davis 1233452342 Hello world");
+Insert into Persons values (108, 10000012, "Davis 1233452342 Hello world");
+Insert into Persons values (109, 10000012, "Davis 1233452342 Hello world");
+Insert into Persons values (110, 10000012, "Davis 1233452342 Hello world");
+Insert into Persons values (111, 10000012, "Davis 1233452342 Hello world");
+Insert into Persons values (112, 10000012, "Davis 1233452342 Hello world");
+Insert into Persons values (113, 10000012, "Davis 1233452342 Hello world");
+Insert into Persons values (114, 10000012, "Davis 1233452342 Hello world");
+Insert into Persons values (115, 10000012, "Davis 1233452342 Hello world");
+Insert into Persons values (116, 10000012, "Davis 1233452342 Hello world");
+Insert into Persons values (117, 10000012, "Davis 1233452342 Hello world");
+Insert into Persons values (118, 10000012, "Davis 1233452342 Hello world");
+Insert into Persons values (119, 10000012, "Davis 1233452342 Hello world");
+Insert into Persons values (120, 10000012, "Davis 1233452342 Hello world");
+Insert into Persons values (121, 10000012, "Davis 1233452342 Hello world");
+Insert into Persons values (122, 10000012, "Davis 1233452342 Hello world");
+Insert into Persons values (123, 10000012, "Davis 1233452342 Hello world");
+Insert into Persons values (124, 10000012, "Davis 1233452342 Hello world");
+Insert into Persons values (125, 10000012, "Davis 1233452342 Hello world");
+Insert into Persons values (126, 10000012, "Davis 1233452342 Hello world");
+Insert into Persons values (127, 10000012, "Davis 1233452342 Hello world");
+Insert into Persons values (128, 10000012, "Davis 1233452342 Hello world");
+Insert into Persons values (129, 10000012, "Davis 1233452342 Hello world");
+Insert into Persons values (130, 10000012, "Davis 1233452342 Hello world");
+Insert into Persons values (131, 10000012, "Davis 1233452342 Hello world");
+Insert into Persons values (132, 10000012, "Davis 1233452342 Hello world");
+Insert into Persons values (133, 10000012, "Davis 1233452342 Hello world");
+Insert into Persons values (134, 10000012, "Davis 1233452342 Hello world");
+Insert into Persons values (135, 10000012, "Davis 1233452342 Hello world");
+Insert into Persons values (136, 10000012, "Davis 1233452342 Hello world");
+Insert into Persons values (137, 10000012, "Davis 1233452342 Hello world");
+Insert into Persons values (138, 10000012, "Davis 1233452342 Hello world");
+Insert into Persons values (139, 10000012, "Davis 1233452342 Hello world");
+
+CREATE INDEX index_name ON Persons (SSN);
