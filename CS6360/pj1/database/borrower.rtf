@@ -1,0 +1,1080 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf400
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Bold;\f2\fnil\fcharset0 Menlo-Regular;
+}
+{\colortbl;\red255\green255\blue255;\red191\green100\blue38;\red32\green32\blue32;\red153\green168\blue186;
+\red133\green96\blue154;\red88\green118\blue71;\red86\green132\blue173;\red109\green109\blue109;}
+{\*\expandedcolortbl;;\csgenericrgb\c74902\c39216\c14902;\csgenericrgb\c12549\c12549\c12549;\csgenericrgb\c60000\c65882\c72941;
+\csgenericrgb\c52157\c37647\c60392;\csgenericrgb\c34510\c46275\c27843;\csgenericrgb\c33725\c51765\c67843;\csgenericrgb\c42745\c42745\c42745;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 -- ----------------------------\
+-- COPY INSTRUCTIONS(\uc0\u8730 )\
+-- ----------------------------\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f1\b \cf2 \cb3 INSERT INTO 
+\f2\b0 \cf4 borrower(\cf5 Card_id\cf2 ,\cf5 Ssn\cf2 ,\cf5 Fname\cf2 ,\cf5 Lname\cf2 ,\cf5 Address\cf2 ,\cf5 Phone\cf4 )\
+
+\f1\b \cf2 select distinct 
+\f2\b0 \cf5 borrower_id\cf2 ,\cf5 Ssn\cf2 ,\cf5 first_name\cf2 ,\cf5 last_name\cf2 ,\cf5 Address\cf2 ,\cf5 Phone\
+
+\f1\b \cf2 from 
+\f2\b0 \cf4 borrowers\cf2 ;\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0 \cf0 \cb1 \
+\
+\
+\
+-- ----------------------------\
+-- Table structure for borrower\
+-- ----------------------------\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f1\b \cf2 \cb3 DROP TABLE IF EXISTS 
+\f2\b0 \cf4 borrower\cf2 ;\
+
+\f1\b CREATE TABLE 
+\f2\b0 \cf4 borrower (\
+  \cf5 Card_id 
+\f1\b \cf2 int NOT NULL UNIQUE DEFAULT 
+\f2\b0 \cf6 \cb3 '0'\cf2 \cb3 ,\
+  \cf5 Ssn 
+\f1\b \cf2 char
+\f2\b0 \cf4 (\cf7 \cb3 9\cf4 \cb3 ) 
+\f1\b \cf2 NOT NULL
+\f2\b0 ,\
+  \cf5 Fname 
+\f1\b \cf2 varchar
+\f2\b0 \cf4 (\cf7 \cb3 40\cf4 \cb3 ) 
+\f1\b \cf2 NOT NULL
+\f2\b0 ,\
+  \cf5 Lname 
+\f1\b \cf2 varchar
+\f2\b0 \cf4 (\cf7 \cb3 40\cf4 \cb3 ) 
+\f1\b \cf2 NOT NULL
+\f2\b0 ,\
+  \cf5 Address 
+\f1\b \cf2 varchar
+\f2\b0 \cf4 (\cf7 \cb3 100\cf4 \cb3 ) 
+\f1\b \cf2 NOT NULL
+\f2\b0 ,\
+  \cf5 Phone 
+\f1\b \cf2 int DEFAULT NULL
+\f2\b0 ,\
+  
+\f1\b PRIMARY KEY 
+\f2\b0 \cf4 (\cf5 Card_id\cf4 )\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf8 \cb3 --   UNIQUE (Ssn) author(Ssn)\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf4 \cb3 )\cf2 ;\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0 \cf0 \cb1 \
+\
+-- ----------------------------\
+-- Records of borrower(PLEASE import \'93borrowers.csv\'94 First, then run the code in first section!)\
+-- ----------------------------\
+INSERT INTO borrower VALUES ('1', '850-47-37', 'Mark', 'Morgan', '5677 Coolidge Street', '0');\
+INSERT INTO borrower VALUES ('2', '256-95-43', 'Eric', 'Warren', '9062 Schurz Drive', '0');\
+INSERT INTO borrower VALUES ('3', '256-51-52', 'Robert', 'Harper', '7786 Sachs Place', '0');\
+INSERT INTO borrower VALUES ('4', '976-95-29', 'Donna', 'Franklin', '3 Magdeline Terrace', '0');\
+INSERT INTO borrower VALUES ('5', '906-63-35', 'Linda', 'King', '41260 Kedzie Terrace', '0');\
+INSERT INTO borrower VALUES ('6', '206-26-71', 'Judy', 'Holmes', '6583 Manitowish Hill', '0');\
+INSERT INTO borrower VALUES ('7', '898-61-35', 'Deborah', 'Lawrence', '2 Hermina Trail', '0');\
+INSERT INTO borrower VALUES ('8', '644-25-04', 'Adam', 'Johnston', '05671 Norway Maple Court', '0');\
+INSERT INTO borrower VALUES ('9', '678-12-46', 'Pamela', 'Carr', '1848 Fordem Avenue', '0');\
+INSERT INTO borrower VALUES ('10', '562-33-79', 'Daniel', 'Fisher', '400 Cody Lane', '0');\
+INSERT INTO borrower VALUES ('11', '441-90-77', 'Stephen', 'Fields', '99 Fair Oaks Drive', '0');\
+INSERT INTO borrower VALUES ('12', '305-53-37', 'Walter', 'Ferguson', '814 Sutteridge Point', '0');\
+INSERT INTO borrower VALUES ('13', '634-61-63', 'Paul', 'Cook', '58295 Pierstorff Pass', '0');\
+INSERT INTO borrower VALUES ('14', '661-24-63', 'Roy', 'Smith', '563 Fairview Park', '0');\
+INSERT INTO borrower VALUES ('15', '350-83-84', 'Michelle', 'Gardner', '28309 Paget Court', '0');\
+INSERT INTO borrower VALUES ('16', '439-75-54', 'George', 'Powell', '31 Clove Crossing', '0');\
+INSERT INTO borrower VALUES ('17', '431-61-58', 'Nicholas', 'Hudson', '29 Esker Trail', '0');\
+INSERT INTO borrower VALUES ('18', '879-82-71', 'Linda', 'Henderson', '117 Katie Center', '0');\
+INSERT INTO borrower VALUES ('19', '484-96-18', 'Gregory', 'Fowler', '42454 Hermina Plaza', '0');\
+INSERT INTO borrower VALUES ('20', '562-52-70', 'Carol', 'Sanders', '99600 Moland Way', '0');\
+INSERT INTO borrower VALUES ('21', '876-61-51', 'Mark', 'Hamilton', '76425 Dixon Hill', '0');\
+INSERT INTO borrower VALUES ('22', '139-71-11', 'Anthony', 'Brown', '8691 Walton Terrace', '0');\
+INSERT INTO borrower VALUES ('23', '239-16-62', 'James', 'Rivera', '4 Golden Leaf Trail', '0');\
+INSERT INTO borrower VALUES ('24', '283-06-77', 'Tammy', 'Cole', '22 Atwood Parkway', '0');\
+INSERT INTO borrower VALUES ('25', '371-60-98', 'Donald', 'Bowman', '196 Golf View Terrace', '0');\
+INSERT INTO borrower VALUES ('26', '438-78-76', 'Susan', 'Gomez', '601 Warbler Point', '0');\
+INSERT INTO borrower VALUES ('27', '893-37-15', 'Juan', 'Martin', '846 Johnson Circle', '0');\
+INSERT INTO borrower VALUES ('28', '434-92-53', 'Samuel', 'Bailey', '1367 Northport Drive', '0');\
+INSERT INTO borrower VALUES ('29', '444-50-98', 'Paul', 'White', '24775 Melvin Place', '0');\
+INSERT INTO borrower VALUES ('30', '557-41-03', 'Gregory', 'Clark', '259 Porter Avenue', '0');\
+INSERT INTO borrower VALUES ('31', '123-99-14', 'Steven', 'Wood', '852 Darwin Alley', '0');\
+INSERT INTO borrower VALUES ('32', '507-26-24', 'Jessica', 'Fuller', '975 Carpenter Parkway', '0');\
+INSERT INTO borrower VALUES ('33', '258-33-51', 'Donna', 'Greene', '86 Delladonna Lane', '0');\
+INSERT INTO borrower VALUES ('34', '876-94-45', 'Edward', 'Ford', '34 Fulton Circle', '0');\
+INSERT INTO borrower VALUES ('35', '153-20-80', 'Steve', 'Torres', '781 Loeprich Alley', '0');\
+INSERT INTO borrower VALUES ('36', '881-79-36', 'Alice', 'Rivera', '79 Dayton Center', '0');\
+INSERT INTO borrower VALUES ('37', '878-61-55', 'Jessica', 'Freeman', '27997 Loftsgordon Lane', '0');\
+INSERT INTO borrower VALUES ('38', '728-84-41', 'Kenneth', 'Harrison', '25074 Holmberg Park', '0');\
+INSERT INTO borrower VALUES ('39', '792-17-45', 'Betty', 'Austin', '4 Schmedeman Terrace', '0');\
+INSERT INTO borrower VALUES ('40', '433-05-36', 'Irene', 'Gonzalez', '820 Oxford Crossing', '0');\
+INSERT INTO borrower VALUES ('41', '132-21-37', 'Charles', 'Foster', '850 Summerview Crossing', '0');\
+INSERT INTO borrower VALUES ('42', '457-93-98', 'Gregory', 'Perez', '57 Bluejay Pass', '0');\
+INSERT INTO borrower VALUES ('43', '906-16-10', 'Jose', 'Stone', '93 Waywood Parkway', '0');\
+INSERT INTO borrower VALUES ('44', '882-36-63', 'Patrick', 'Moore', '78 Crest Line Road', '0');\
+INSERT INTO borrower VALUES ('45', '728-96-34', 'Louis', 'Lynch', '12197 Kinsman Center', '0');\
+INSERT INTO borrower VALUES ('46', '377-44-12', 'Matthew', 'Snyder', '169 Mayfield Park', '0');\
+INSERT INTO borrower VALUES ('47', '582-62-70', 'Sara', 'Wagner', '24827 Twin Pines Junction', '0');\
+INSERT INTO borrower VALUES ('48', '577-82-29', 'Louise', 'Long', '6 Haas Center', '0');\
+INSERT INTO borrower VALUES ('49', '216-53-69', 'Judy', 'Hamilton', '65364 Mosinee Center', '0');\
+INSERT INTO borrower VALUES ('50', '202-40-34', 'Evelyn', 'Young', '4788 South Street', '0');\
+INSERT INTO borrower VALUES ('51', '897-56-85', 'James', 'Moore', '9089 Lunder Parkway', '0');\
+INSERT INTO borrower VALUES ('52', '923-84-78', 'Clarence', 'Romero', '68501 Michigan Street', '0');\
+INSERT INTO borrower VALUES ('53', '539-63-01', 'Jennifer', 'Smith', '3 Cordelia Terrace', '0');\
+INSERT INTO borrower VALUES ('54', '636-25-15', 'Jack', 'Baker', '01441 Eastlawn Place', '0');\
+INSERT INTO borrower VALUES ('55', '622-93-59', 'Amy', 'Nguyen', '79 Rigney Circle', '0');\
+INSERT INTO borrower VALUES ('56', '823-00-88', 'Maria', 'Stevens', '5348 David Point', '0');\
+INSERT INTO borrower VALUES ('57', '534-07-70', 'Teresa', 'Carpenter', '6280 Spenser Lane', '0');\
+INSERT INTO borrower VALUES ('58', '203-68-85', 'Roy', 'Arnold', '7548 Dunning Junction', '0');\
+INSERT INTO borrower VALUES ('59', '457-75-13', 'Randy', 'Stewart', '5004 Emmet Park', '0');\
+INSERT INTO borrower VALUES ('60', '524-73-04', 'Brenda', 'Fernandez', '335 Forster Alley', '0');\
+INSERT INTO borrower VALUES ('61', '344-66-83', 'Janet', 'Thompson', '1 Chinook Place', '0');\
+INSERT INTO borrower VALUES ('62', '716-55-33', 'Billy', 'Ortiz', '4 Hintze Court', '0');\
+INSERT INTO borrower VALUES ('63', '869-29-58', 'Edward', 'Hawkins', '96231 Northland Plaza', '0');\
+INSERT INTO borrower VALUES ('64', '218-81-62', 'Mark', 'Morgan', '5 Miller Lane', '0');\
+INSERT INTO borrower VALUES ('65', '913-50-19', 'Carolyn', 'Morgan', '975 Golf View Place', '0');\
+INSERT INTO borrower VALUES ('66', '749-40-86', 'Tina', 'Weaver', '5414 Green Ridge Street', '0');\
+INSERT INTO borrower VALUES ('67', '992-92-61', 'Eric', 'Taylor', '6 Fisk Pass', '0');\
+INSERT INTO borrower VALUES ('68', '378-07-16', 'Ruth', 'Henry', '84 Hermina Street', '0');\
+INSERT INTO borrower VALUES ('69', '388-44-99', 'Phillip', 'Perkins', '84771 Bartelt Trail', '0');\
+INSERT INTO borrower VALUES ('70', '288-23-03', 'Annie', 'Welch', '80 Stuart Road', '0');\
+INSERT INTO borrower VALUES ('71', '509-44-17', 'Lois', 'Hunter', '49 Blaine Lane', '0');\
+INSERT INTO borrower VALUES ('72', '704-79-59', 'Lisa', 'Cook', '4412 Lakewood Gardens Plaza', '0');\
+INSERT INTO borrower VALUES ('73', '948-30-84', 'Kathleen', 'Harvey', '13 Grayhawk Hill', '0');\
+INSERT INTO borrower VALUES ('74', '651-57-63', 'Diane', 'Stevens', '0091 American Circle', '0');\
+INSERT INTO borrower VALUES ('75', '908-63-26', 'Samuel', 'Young', '0157 Holmberg Street', '0');\
+INSERT INTO borrower VALUES ('76', '727-25-37', 'Mark', 'Riley', '4900 Thompson Court', '0');\
+INSERT INTO borrower VALUES ('77', '775-32-59', 'Bonnie', 'Ross', '0 Walton Court', '0');\
+INSERT INTO borrower VALUES ('78', '402-35-05', 'Elizabeth', 'Arnold', '952 Sage Pass', '0');\
+INSERT INTO borrower VALUES ('79', '270-86-69', 'John', 'Walker', '2 Packers Crossing', '0');\
+INSERT INTO borrower VALUES ('80', '982-11-96', 'William', 'Simmons', '1232 Hayes Crossing', '0');\
+INSERT INTO borrower VALUES ('81', '757-38-52', 'Lisa', 'Kelley', '3718 Twin Pines Way', '0');\
+INSERT INTO borrower VALUES ('82', '980-24-23', 'Carl', 'Larson', '096 Goodland Parkway', '0');\
+INSERT INTO borrower VALUES ('83', '444-73-40', 'Brandon', 'Anderson', '8 Leroy Circle', '0');\
+INSERT INTO borrower VALUES ('84', '278-33-41', 'Gloria', 'Myers', '03 Elmside Center', '0');\
+INSERT INTO borrower VALUES ('85', '772-25-96', 'Daniel', 'Freeman', '9584 Elka Place', '0');\
+INSERT INTO borrower VALUES ('86', '232-98-46', 'Judith', 'Mitchell', '2506 Merchant Terrace', '0');\
+INSERT INTO borrower VALUES ('87', '937-38-51', 'Alan', 'King', '958 Burrows Street', '0');\
+INSERT INTO borrower VALUES ('88', '327-80-31', 'Steve', 'Phillips', '45557 Jana Court', '0');\
+INSERT INTO borrower VALUES ('89', '405-92-74', 'Brenda', 'Butler', '5 Calypso Avenue', '0');\
+INSERT INTO borrower VALUES ('90', '133-37-89', 'Patricia', 'Spencer', '65143 Union Lane', '0');\
+INSERT INTO borrower VALUES ('91', '227-64-61', 'Larry', 'Olson', '50299 Lien Parkway', '0');\
+INSERT INTO borrower VALUES ('92', '272-41-64', 'Victor', 'Sullivan', '272 Milwaukee Point', '0');\
+INSERT INTO borrower VALUES ('93', '318-95-02', 'Kathryn', 'Taylor', '2952 Thackeray Point', '0');\
+INSERT INTO borrower VALUES ('94', '729-22-85', 'Rachel', 'Little', '755 Kropf Pass', '0');\
+INSERT INTO borrower VALUES ('95', '783-54-97', 'Donald', 'Richardson', '951 Chive Avenue', '0');\
+INSERT INTO borrower VALUES ('96', '131-52-57', 'Stephen', 'Chapman', '0 Lunder Alley', '0');\
+INSERT INTO borrower VALUES ('97', '335-18-54', 'Harold', 'Richardson', '76743 Burrows Court', '0');\
+INSERT INTO borrower VALUES ('98', '933-15-21', 'Ernest', 'Palmer', '6 Upham Drive', '0');\
+INSERT INTO borrower VALUES ('99', '595-38-38', 'Pamela', 'Matthews', '2 Green Lane', '0');\
+INSERT INTO borrower VALUES ('100', '808-44-76', 'Jason', 'Campbell', '6 Raven Court', '0');\
+INSERT INTO borrower VALUES ('101', '924-16-02', 'Joyce', 'Fuller', '45900 Iowa Way', '0');\
+INSERT INTO borrower VALUES ('102', '348-53-96', 'Andrea', 'Bailey', '33 Cardinal Alley', '0');\
+INSERT INTO borrower VALUES ('103', '379-16-07', 'Denise', 'Perry', '68 Old Shore Lane', '0');\
+INSERT INTO borrower VALUES ('104', '997-92-47', 'Michael', 'Jacobs', '0 Brentwood Place', '0');\
+INSERT INTO borrower VALUES ('105', '664-95-54', 'Catherine', 'Reid', '41544 Anniversary Crossing', '0');\
+INSERT INTO borrower VALUES ('106', '424-12-28', 'Aaron', 'Romero', '844 Union Way', '0');\
+INSERT INTO borrower VALUES ('107', '295-19-32', 'John', 'Warren', '9127 Farragut Center', '0');\
+INSERT INTO borrower VALUES ('108', '806-92-27', 'Steve', 'Garrett', '729 Kenwood Court', '0');\
+INSERT INTO borrower VALUES ('109', '466-92-66', 'Jimmy', 'Ellis', '8 Nevada Place', '0');\
+INSERT INTO borrower VALUES ('110', '454-64-81', 'Jose', 'Perez', '4463 Commercial Circle', '0');\
+INSERT INTO borrower VALUES ('111', '909-18-68', 'Katherine', 'Dean', '4978 Cordelia Way', '0');\
+INSERT INTO borrower VALUES ('112', '203-54-91', 'Ashley', 'Jackson', '676 David Road', '0');\
+INSERT INTO borrower VALUES ('113', '177-45-87', 'Kathryn', 'Hart', '29 Dexter Circle', '0');\
+INSERT INTO borrower VALUES ('114', '279-96-60', 'Dennis', 'Ruiz', '18784 Browning Circle', '0');\
+INSERT INTO borrower VALUES ('115', '561-91-35', 'Sharon', 'Cox', '4 Hoffman Street', '0');\
+INSERT INTO borrower VALUES ('116', '325-12-42', 'Ruby', 'Burke', '5 Swallow Avenue', '0');\
+INSERT INTO borrower VALUES ('117', '537-25-05', 'Jerry', 'Stewart', '54494 Kenwood Trail', '0');\
+INSERT INTO borrower VALUES ('118', '508-36-52', 'Howard', 'Fisher', '2 Reinke Lane', '0');\
+INSERT INTO borrower VALUES ('119', '663-89-71', 'Eric', 'Phillips', '578 Westend Pass', '0');\
+INSERT INTO borrower VALUES ('120', '582-89-05', 'Albert', 'Cruz', '04 Shopko Way', '0');\
+INSERT INTO borrower VALUES ('121', '112-24-49', 'Timothy', 'Harrison', '04099 Anhalt Place', '0');\
+INSERT INTO borrower VALUES ('122', '593-24-85', 'Ronald', 'Phillips', '4632 Brentwood Hill', '0');\
+INSERT INTO borrower VALUES ('123', '152-06-97', 'Antonio', 'Bishop', '212 Memorial Lane', '0');\
+INSERT INTO borrower VALUES ('124', '917-73-06', 'Howard', 'Green', '9 Florence Trail', '0');\
+INSERT INTO borrower VALUES ('125', '550-66-40', 'Willie', 'Murphy', '09 Loeprich Parkway', '0');\
+INSERT INTO borrower VALUES ('126', '151-32-06', 'Christine', 'Washington', '95086 Eliot Alley', '0');\
+INSERT INTO borrower VALUES ('127', '363-52-93', 'Angela', 'Ellis', '61 Chinook Avenue', '0');\
+INSERT INTO borrower VALUES ('128', '498-97-95', 'Kathy', 'Wagner', '1 Columbus Crossing', '0');\
+INSERT INTO borrower VALUES ('129', '109-59-37', 'Antonio', 'Carr', '6996 Arizona Avenue', '0');\
+INSERT INTO borrower VALUES ('130', '919-11-70', 'Samuel', 'Ellis', '69968 Meadow Ridge Alley', '0');\
+INSERT INTO borrower VALUES ('131', '532-19-31', 'Bruce', 'Williamson', '51 Maywood Place', '0');\
+INSERT INTO borrower VALUES ('132', '186-61-22', 'Ruby', 'Mcdonald', '031 Ohio Lane', '0');\
+INSERT INTO borrower VALUES ('133', '758-82-09', 'Jack', 'Larson', '43086 Dexter Way', '0');\
+INSERT INTO borrower VALUES ('134', '789-85-01', 'Tammy', 'Hunter', '08 Marquette Pass', '0');\
+INSERT INTO borrower VALUES ('135', '144-61-28', 'Mildred', 'Richards', '6863 Warbler Crossing', '0');\
+INSERT INTO borrower VALUES ('136', '812-34-47', 'Janet', 'Dixon', '1 Ridgeway Terrace', '0');\
+INSERT INTO borrower VALUES ('137', '605-13-59', 'Antonio', 'Hamilton', '2545 Lerdahl Center', '0');\
+INSERT INTO borrower VALUES ('138', '873-83-17', 'Louise', 'Jordan', '7326 Reindahl Point', '0');\
+INSERT INTO borrower VALUES ('139', '992-25-40', 'Linda', 'Hunt', '710 Lighthouse Bay Point', '0');\
+INSERT INTO borrower VALUES ('140', '222-46-00', 'Joan', 'Webb', '90 Bashford Avenue', '0');\
+INSERT INTO borrower VALUES ('141', '135-71-15', 'Kevin', 'Frazier', '47 Bluejay Hill', '0');\
+INSERT INTO borrower VALUES ('142', '490-88-84', 'Todd', 'Schmidt', '4 Lakeland Pass', '0');\
+INSERT INTO borrower VALUES ('143', '797-95-46', 'Andrea', 'Sims', '898 Killdeer Pass', '0');\
+INSERT INTO borrower VALUES ('144', '959-24-34', 'Barbara', 'Brooks', '305 Mendota Plaza', '0');\
+INSERT INTO borrower VALUES ('145', '600-79-00', 'Kenneth', 'Anderson', '246 Shopko Drive', '0');\
+INSERT INTO borrower VALUES ('146', '704-59-68', 'Jessica', 'Knight', '36 Forest Park', '0');\
+INSERT INTO borrower VALUES ('147', '542-87-93', 'Dorothy', 'Adams', '2483 Melody Plaza', '0');\
+INSERT INTO borrower VALUES ('148', '634-80-88', 'Phillip', 'Adams', '4 Derek Point', '0');\
+INSERT INTO borrower VALUES ('149', '599-72-60', 'James', 'Carpenter', '6668 Ilene Court', '0');\
+INSERT INTO borrower VALUES ('150', '751-57-06', 'Amy', 'Lopez', '715 Westend Avenue', '0');\
+INSERT INTO borrower VALUES ('151', '570-71-95', 'Frank', 'Gomez', '61280 Mallory Parkway', '0');\
+INSERT INTO borrower VALUES ('152', '585-65-88', 'Debra', 'Rogers', '4 Southridge Place', '0');\
+INSERT INTO borrower VALUES ('153', '784-42-36', 'Aaron', 'Chapman', '840 Messerschmidt Plaza', '0');\
+INSERT INTO borrower VALUES ('154', '327-00-28', 'Jerry', 'Cruz', '48314 Muir Crossing', '0');\
+INSERT INTO borrower VALUES ('155', '209-64-58', 'Gerald', 'Mccoy', '71113 Corry Circle', '0');\
+INSERT INTO borrower VALUES ('156', '352-52-53', 'Matthew', 'Ward', '3726 Oneill Terrace', '0');\
+INSERT INTO borrower VALUES ('157', '312-33-65', 'Marilyn', 'Andrews', '61664 Warrior Street', '0');\
+INSERT INTO borrower VALUES ('158', '585-35-85', 'Lawrence', 'Coleman', '0 Scoville Plaza', '0');\
+INSERT INTO borrower VALUES ('159', '766-72-67', 'Sarah', 'Burton', '65230 Prairie Rose Point', '0');\
+INSERT INTO borrower VALUES ('160', '519-22-16', 'Gerald', 'White', '82 Delaware Plaza', '0');\
+INSERT INTO borrower VALUES ('161', '811-23-27', 'Shawn', 'Robertson', '9 Troy Alley', '0');\
+INSERT INTO borrower VALUES ('162', '983-17-10', 'Samuel', 'Arnold', '1748 Monterey Road', '0');\
+INSERT INTO borrower VALUES ('163', '153-09-50', 'Ruby', 'Mcdonald', '00621 Killdeer Crossing', '0');\
+INSERT INTO borrower VALUES ('164', '208-16-25', 'Lillian', 'Kim', '47585 Nova Drive', '0');\
+INSERT INTO borrower VALUES ('165', '604-54-42', 'Pamela', 'Bradley', '2 Lakewood Gardens Place', '0');\
+INSERT INTO borrower VALUES ('166', '764-51-25', 'Ralph', 'Chavez', '15739 Vera Plaza', '0');\
+INSERT INTO borrower VALUES ('167', '102-72-19', 'Martin', 'Richards', '8 New Castle Trail', '0');\
+INSERT INTO borrower VALUES ('168', '743-82-13', 'Chris', 'Simmons', '46833 Farmco Junction', '0');\
+INSERT INTO borrower VALUES ('169', '915-27-61', 'Martin', 'Stevens', '573 Oneill Hill', '0');\
+INSERT INTO borrower VALUES ('170', '615-68-84', 'Lisa', 'West', '55586 Ronald Regan Lane', '0');\
+INSERT INTO borrower VALUES ('171', '538-66-19', 'Daniel', 'Marshall', '3 Manitowish Crossing', '0');\
+INSERT INTO borrower VALUES ('172', '981-95-37', 'John', 'Hicks', '81 Northfield Place', '0');\
+INSERT INTO borrower VALUES ('173', '802-73-67', 'Roger', 'Harrison', '9 Meadow Vale Drive', '0');\
+INSERT INTO borrower VALUES ('174', '777-08-72', 'Teresa', 'Thompson', '06364 Gerald Street', '0');\
+INSERT INTO borrower VALUES ('175', '445-90-24', 'Arthur', 'Freeman', '51652 Russell Street', '0');\
+INSERT INTO borrower VALUES ('176', '909-02-30', 'Howard', 'Simpson', '95 Redwing Lane', '0');\
+INSERT INTO borrower VALUES ('177', '790-10-18', 'Christopher', 'Spencer', '6 Northfield Crossing', '0');\
+INSERT INTO borrower VALUES ('178', '847-64-18', 'Theresa', 'Wood', '0420 Westport Circle', '0');\
+INSERT INTO borrower VALUES ('179', '930-97-85', 'Lillian', 'Wright', '82972 Raven Road', '0');\
+INSERT INTO borrower VALUES ('180', '823-59-40', 'Sara', 'Rogers', '7 Twin Pines Circle', '0');\
+INSERT INTO borrower VALUES ('181', '831-37-23', 'Linda', 'Richards', '046 Harper Center', '0');\
+INSERT INTO borrower VALUES ('182', '139-70-80', 'Albert', 'Cunningham', '414 Summer Ridge Trail', '0');\
+INSERT INTO borrower VALUES ('183', '611-16-92', 'Debra', 'Holmes', '22 Bluejay Road', '0');\
+INSERT INTO borrower VALUES ('184', '248-33-51', 'Jason', 'Davis', '82931 Cardinal Junction', '0');\
+INSERT INTO borrower VALUES ('185', '399-38-85', 'Justin', 'Fowler', '1958 Leroy Way', '0');\
+INSERT INTO borrower VALUES ('186', '515-58-46', 'Catherine', 'Harris', '4091 Doe Crossing Alley', '0');\
+INSERT INTO borrower VALUES ('187', '911-94-64', 'Gary', 'Reyes', '06 Shelley Parkway', '0');\
+INSERT INTO borrower VALUES ('188', '952-37-22', 'Clarence', 'Harvey', '637 Blackbird Crossing', '0');\
+INSERT INTO borrower VALUES ('189', '866-26-34', 'Kathleen', 'Lynch', '0 Northview Center', '0');\
+INSERT INTO borrower VALUES ('190', '696-87-12', 'Angela', 'Myers', '07 Jenifer Point', '0');\
+INSERT INTO borrower VALUES ('191', '525-30-00', 'Paula', 'Roberts', '2025 Annamark Court', '0');\
+INSERT INTO borrower VALUES ('192', '455-25-13', 'Marie', 'Hudson', '35523 Fulton Point', '0');\
+INSERT INTO borrower VALUES ('193', '300-83-30', 'Victor', 'George', '16 Butterfield Place', '0');\
+INSERT INTO borrower VALUES ('194', '568-53-72', 'Judith', 'Lane', '59463 Havey Center', '0');\
+INSERT INTO borrower VALUES ('195', '219-13-15', 'Steven', 'Carpenter', '64 Rutledge Court', '0');\
+INSERT INTO borrower VALUES ('196', '628-41-98', 'Beverly', 'Welch', '0 7th Point', '0');\
+INSERT INTO borrower VALUES ('197', '553-83-02', 'Chris', 'Cox', '386 Coleman Avenue', '0');\
+INSERT INTO borrower VALUES ('198', '664-42-38', 'Heather', 'Duncan', '3 Acker Avenue', '0');\
+INSERT INTO borrower VALUES ('199', '932-05-22', 'Helen', 'Cooper', '90887 Ohio Trail', '0');\
+INSERT INTO borrower VALUES ('200', '359-15-65', 'Linda', 'Dixon', '0506 Boyd Plaza', '0');\
+INSERT INTO borrower VALUES ('201', '377-03-63', 'Eric', 'Wood', '730 Bonner Hill', '0');\
+INSERT INTO borrower VALUES ('202', '956-77-59', 'Brenda', 'Brooks', '4 Pennsylvania Hill', '0');\
+INSERT INTO borrower VALUES ('203', '262-72-99', 'Fred', 'Crawford', '00 Mariners Cove Terrace', '0');\
+INSERT INTO borrower VALUES ('204', '935-26-10', 'Alan', 'Morris', '2238 Debra Center', '0');\
+INSERT INTO borrower VALUES ('205', '575-57-34', 'Jimmy', 'Watkins', '91873 Colorado Crossing', '0');\
+INSERT INTO borrower VALUES ('206', '534-35-28', 'Keith', 'Fisher', '2 Muir Crossing', '0');\
+INSERT INTO borrower VALUES ('207', '487-48-34', 'Rose', 'Oliver', '3152 Thackeray Point', '0');\
+INSERT INTO borrower VALUES ('208', '282-19-50', 'Johnny', 'Vasquez', '809 Grover Circle', '0');\
+INSERT INTO borrower VALUES ('209', '198-52-62', 'Judith', 'Dunn', '337 Northview Point', '0');\
+INSERT INTO borrower VALUES ('210', '165-45-33', 'Roger', 'Freeman', '13 Farmco Way', '0');\
+INSERT INTO borrower VALUES ('211', '983-87-00', 'Richard', 'Bailey', '3108 Browning Park', '0');\
+INSERT INTO borrower VALUES ('212', '387-20-16', 'Ernest', 'Palmer', '66600 Pleasure Drive', '0');\
+INSERT INTO borrower VALUES ('213', '440-22-08', 'Janice', 'Long', '26577 Laurel Road', '0');\
+INSERT INTO borrower VALUES ('214', '589-60-25', 'Thomas', 'Schmidt', '0 New Castle Crossing', '0');\
+INSERT INTO borrower VALUES ('215', '564-07-71', 'Kathryn', 'Hayes', '18504 Basil Hill', '0');\
+INSERT INTO borrower VALUES ('216', '106-58-88', 'Chris', 'Perkins', '14865 John Wall Center', '0');\
+INSERT INTO borrower VALUES ('217', '664-12-81', 'Thomas', 'Scott', '449 Schurz Parkway', '0');\
+INSERT INTO borrower VALUES ('218', '394-69-44', 'Judy', 'Richards', '9420 Main Hill', '0');\
+INSERT INTO borrower VALUES ('219', '977-89-10', 'Janice', 'Garrett', '2998 Chive Place', '0');\
+INSERT INTO borrower VALUES ('220', '720-12-06', 'Raymond', 'Peterson', '892 Fairfield Point', '0');\
+INSERT INTO borrower VALUES ('221', '344-03-80', 'Marilyn', 'Williams', '0 John Wall Circle', '0');\
+INSERT INTO borrower VALUES ('222', '166-80-91', 'Teresa', 'Reid', '9224 Manufacturers Terrace', '0');\
+INSERT INTO borrower VALUES ('223', '628-54-45', 'Irene', 'Medina', '51 Southridge Pass', '0');\
+INSERT INTO borrower VALUES ('224', '763-92-52', 'Linda', 'Carpenter', '43 Dovetail Road', '0');\
+INSERT INTO borrower VALUES ('225', '468-30-67', 'Jonathan', 'Harrison', '113 Havey Crossing', '0');\
+INSERT INTO borrower VALUES ('226', '716-63-58', 'Laura', 'Graham', '72346 Emmet Place', '0');\
+INSERT INTO borrower VALUES ('227', '462-64-87', 'Sharon', 'Pierce', '9 Clove Trail', '0');\
+INSERT INTO borrower VALUES ('228', '890-27-45', 'Katherine', 'Boyd', '90 Park Meadow Junction', '0');\
+INSERT INTO borrower VALUES ('229', '875-97-78', 'Brian', 'Perkins', '5988 Havey Street', '0');\
+INSERT INTO borrower VALUES ('230', '867-84-83', 'Eric', 'Cooper', '7 Granby Road', '0');\
+INSERT INTO borrower VALUES ('231', '907-94-12', 'Randy', 'Stanley', '94552 Linden Court', '0');\
+INSERT INTO borrower VALUES ('232', '319-59-26', 'Pamela', 'Gutierrez', '50236 Goodland Lane', '0');\
+INSERT INTO borrower VALUES ('233', '145-92-80', 'Keith', 'Perkins', '9543 Farragut Road', '0');\
+INSERT INTO borrower VALUES ('234', '361-70-37', 'Scott', 'Spencer', '5 Lukken Junction', '0');\
+INSERT INTO borrower VALUES ('235', '992-96-48', 'Todd', 'Bryant', '418 Onsgard Hill', '0');\
+INSERT INTO borrower VALUES ('236', '916-54-81', 'Jose', 'Anderson', '2705 Ohio Junction', '0');\
+INSERT INTO borrower VALUES ('237', '133-83-48', 'Amanda', 'Davis', '1636 Norway Maple Place', '0');\
+INSERT INTO borrower VALUES ('238', '712-12-86', 'Richard', 'Cruz', '69 Marquette Park', '0');\
+INSERT INTO borrower VALUES ('239', '325-77-28', 'Sara', 'Walker', '18924 3rd Circle', '0');\
+INSERT INTO borrower VALUES ('240', '974-70-97', 'Gloria', 'Sanders', '36961 Green Ridge Place', '0');\
+INSERT INTO borrower VALUES ('241', '584-04-31', 'Jonathan', 'Harris', '286 Merry Way', '0');\
+INSERT INTO borrower VALUES ('242', '152-31-39', 'Juan', 'Fields', '291 Marquette Parkway', '0');\
+INSERT INTO borrower VALUES ('243', '950-88-32', 'Wanda', 'Mills', '79024 Surrey Way', '0');\
+INSERT INTO borrower VALUES ('244', '315-12-06', 'Karen', 'Davis', '83 Holy Cross Drive', '0');\
+INSERT INTO borrower VALUES ('245', '328-21-29', 'Scott', 'Montgomery', '96247 Oriole Circle', '0');\
+INSERT INTO borrower VALUES ('246', '752-03-82', 'Michael', 'Stevens', '356 Shoshone Drive', '0');\
+INSERT INTO borrower VALUES ('247', '223-10-59', 'Andrea', 'Baker', '90 Heath Drive', '0');\
+INSERT INTO borrower VALUES ('248', '383-36-29', 'Marilyn', 'Alexander', '443 Dottie Circle', '0');\
+INSERT INTO borrower VALUES ('249', '556-96-70', 'Harry', 'Alvarez', '636 Express Way', '0');\
+INSERT INTO borrower VALUES ('250', '760-25-18', 'Rose', 'Peterson', '034 Shelley Drive', '0');\
+INSERT INTO borrower VALUES ('251', '196-06-09', 'Barbara', 'Garcia', '5690 Acker Road', '0');\
+INSERT INTO borrower VALUES ('252', '140-56-29', 'Ann', 'Berry', '37940 Morning Hill', '0');\
+INSERT INTO borrower VALUES ('253', '493-92-42', 'Paul', 'Turner', '75287 Pleasure Place', '0');\
+INSERT INTO borrower VALUES ('254', '353-18-96', 'Theresa', 'Day', '9 American Ash Crossing', '0');\
+INSERT INTO borrower VALUES ('255', '926-42-89', 'Andrew', 'Gilbert', '8 American Parkway', '0');\
+INSERT INTO borrower VALUES ('256', '741-11-78', 'Alice', 'Turner', '4 Namekagon Lane', '0');\
+INSERT INTO borrower VALUES ('257', '700-23-84', 'Julie', 'Smith', '61345 Namekagon Place', '0');\
+INSERT INTO borrower VALUES ('258', '390-30-81', 'Alice', 'Carr', '7564 Ohio Plaza', '0');\
+INSERT INTO borrower VALUES ('259', '941-05-71', 'Harry', 'Baker', '7 Straubel Center', '0');\
+INSERT INTO borrower VALUES ('260', '949-37-63', 'Donna', 'Cooper', '1629 Summer Ridge Plaza', '0');\
+INSERT INTO borrower VALUES ('261', '947-04-72', 'Laura', 'Rogers', '7776 Summer Ridge Court', '0');\
+INSERT INTO borrower VALUES ('262', '443-61-55', 'Jessica', 'Hicks', '17138 Ryan Circle', '0');\
+INSERT INTO borrower VALUES ('263', '428-09-73', 'George', 'Turner', '4 Quincy Pass', '0');\
+INSERT INTO borrower VALUES ('264', '354-53-88', 'Joan', 'Watkins', '9601 Lerdahl Pass', '0');\
+INSERT INTO borrower VALUES ('265', '757-21-31', 'Andrea', 'Gonzalez', '127 Russell Hill', '0');\
+INSERT INTO borrower VALUES ('266', '924-17-99', 'Billy', 'Little', '46 Autumn Leaf Junction', '0');\
+INSERT INTO borrower VALUES ('267', '778-68-66', 'Teresa', 'Marshall', '2 Sheridan Trail', '0');\
+INSERT INTO borrower VALUES ('268', '431-20-01', 'Benjamin', 'Lynch', '53 Tennyson Park', '0');\
+INSERT INTO borrower VALUES ('269', '851-35-03', 'Nancy', 'Dixon', '4 Dwight Street', '0');\
+INSERT INTO borrower VALUES ('270', '583-40-61', 'Jean', 'Dunn', '4 North Street', '0');\
+INSERT INTO borrower VALUES ('271', '125-98-50', 'Anthony', 'Gardner', '9823 Donald Terrace', '0');\
+INSERT INTO borrower VALUES ('272', '750-84-13', 'Benjamin', 'Morrison', '21 Oriole Terrace', '0');\
+INSERT INTO borrower VALUES ('273', '319-09-37', 'Anne', 'Dixon', '9579 Browning Crossing', '0');\
+INSERT INTO borrower VALUES ('274', '585-90-06', 'Denise', 'Wallace', '6021 Portage Park', '0');\
+INSERT INTO borrower VALUES ('275', '416-38-35', 'Linda', 'Owens', '13 Monterey Alley', '0');\
+INSERT INTO borrower VALUES ('276', '614-68-56', 'Larry', 'Warren', '2657 Mitchell Hill', '0');\
+INSERT INTO borrower VALUES ('277', '984-48-81', 'Edward', 'Hunt', '6 Claremont Avenue', '0');\
+INSERT INTO borrower VALUES ('278', '446-20-40', 'Harry', 'Mcdonald', '22283 Farragut Place', '0');\
+INSERT INTO borrower VALUES ('279', '154-67-17', 'Lawrence', 'Wells', '841 Delaware Place', '0');\
+INSERT INTO borrower VALUES ('280', '218-70-17', 'Martin', 'Fuller', '53309 Buhler Place', '0');\
+INSERT INTO borrower VALUES ('281', '685-99-29', 'Roger', 'Ellis', '74213 Charing Cross Circle', '0');\
+INSERT INTO borrower VALUES ('282', '551-99-08', 'Patrick', 'Moreno', '490 Rockefeller Lane', '0');\
+INSERT INTO borrower VALUES ('283', '156-64-67', 'Andrew', 'Cole', '30 Sunfield Pass', '0');\
+INSERT INTO borrower VALUES ('284', '704-85-78', 'Joan', 'Hudson', '4 Everett Court', '0');\
+INSERT INTO borrower VALUES ('285', '491-79-62', 'Chris', 'Powell', '4 Jenifer Circle', '0');\
+INSERT INTO borrower VALUES ('286', '164-90-80', 'Anna', 'Perez', '1241 Graceland Court', '0');\
+INSERT INTO borrower VALUES ('287', '857-94-09', 'Debra', 'Gray', '251 Monterey Hill', '0');\
+INSERT INTO borrower VALUES ('288', '581-46-27', 'Annie', 'Shaw', '561 Cody Crossing', '0');\
+INSERT INTO borrower VALUES ('289', '300-46-83', 'Shawn', 'Martinez', '19 Lunder Park', '0');\
+INSERT INTO borrower VALUES ('290', '691-97-14', 'Mary', 'Graham', '701 Cordelia Court', '0');\
+INSERT INTO borrower VALUES ('291', '239-90-40', 'Janet', 'West', '2308 Division Center', '0');\
+INSERT INTO borrower VALUES ('292', '702-60-42', 'Aaron', 'Arnold', '5886 Banding Trail', '0');\
+INSERT INTO borrower VALUES ('293', '253-17-07', 'Justin', 'Brown', '611 Green Plaza', '0');\
+INSERT INTO borrower VALUES ('294', '547-06-90', 'George', 'Torres', '64206 Calypso Hill', '0');\
+INSERT INTO borrower VALUES ('295', '722-28-93', 'Brian', 'Romero', '4418 Green Ridge Terrace', '0');\
+INSERT INTO borrower VALUES ('296', '488-01-10', 'Lawrence', 'Morris', '42 Magdeline Pass', '0');\
+INSERT INTO borrower VALUES ('297', '947-93-97', 'Patrick', 'Garcia', '1 Nevada Parkway', '0');\
+INSERT INTO borrower VALUES ('298', '708-32-68', 'Ashley', 'Moreno', '067 Morning Park', '0');\
+INSERT INTO borrower VALUES ('299', '421-79-08', 'Aaron', 'Ellis', '1925 Grasskamp Alley', '0');\
+INSERT INTO borrower VALUES ('300', '554-28-32', 'Jimmy', 'James', '3 Knutson Way', '0');\
+INSERT INTO borrower VALUES ('301', '271-28-45', 'Maria', 'Torres', '56168 Arizona Drive', '0');\
+INSERT INTO borrower VALUES ('302', '453-78-48', 'Chris', 'Owens', '6 Browning Park', '0');\
+INSERT INTO borrower VALUES ('303', '556-27-97', 'Elizabeth', 'Harvey', '1995 Nelson Park', '0');\
+INSERT INTO borrower VALUES ('304', '212-61-94', 'Jane', 'Baker', '0062 Sunbrook Junction', '0');\
+INSERT INTO borrower VALUES ('305', '142-06-84', 'Lisa', 'Kelley', '272 Larry Drive', '0');\
+INSERT INTO borrower VALUES ('306', '205-62-63', 'Jonathan', 'Diaz', '18283 Brown Center', '0');\
+INSERT INTO borrower VALUES ('307', '592-93-99', 'Mildred', 'Allen', '5734 La Follette Point', '0');\
+INSERT INTO borrower VALUES ('308', '714-97-12', 'Linda', 'Rogers', '0590 Northport Drive', '0');\
+INSERT INTO borrower VALUES ('309', '949-18-18', 'Gary', 'Garrett', '5285 2nd Court', '0');\
+INSERT INTO borrower VALUES ('310', '454-36-50', 'Earl', 'Hall', '7755 Park Meadow Way', '0');\
+INSERT INTO borrower VALUES ('311', '586-20-41', 'Benjamin', 'Bailey', '72101 Elmside Parkway', '0');\
+INSERT INTO borrower VALUES ('312', '853-10-46', 'Angela', 'Graham', '5 High Crossing Crossing', '0');\
+INSERT INTO borrower VALUES ('313', '132-68-78', 'Dennis', 'Hunter', '7 2nd Place', '0');\
+INSERT INTO borrower VALUES ('314', '618-21-27', 'Matthew', 'Stevens', '9603 Hansons Way', '0');\
+INSERT INTO borrower VALUES ('315', '852-75-00', 'Annie', 'Freeman', '7466 Gulseth Alley', '0');\
+INSERT INTO borrower VALUES ('316', '652-37-49', 'Richard', 'Lawson', '792 Dottie Circle', '0');\
+INSERT INTO borrower VALUES ('317', '953-35-35', 'Susan', 'Allen', '6 Morrow Alley', '0');\
+INSERT INTO borrower VALUES ('318', '269-55-49', 'Rose', 'Coleman', '26094 Loomis Alley', '0');\
+INSERT INTO borrower VALUES ('319', '398-57-56', 'Kathy', 'Elliott', '28 Boyd Pass', '0');\
+INSERT INTO borrower VALUES ('320', '769-13-68', 'Teresa', 'Brooks', '57699 Oak Circle', '0');\
+INSERT INTO borrower VALUES ('321', '781-65-22', 'Julie', 'Lane', '8261 Magdeline Road', '0');\
+INSERT INTO borrower VALUES ('322', '880-14-55', 'Jessica', 'Day', '80 Cascade Junction', '0');\
+INSERT INTO borrower VALUES ('323', '472-47-39', 'Billy', 'Cruz', '75 Mosinee Court', '0');\
+INSERT INTO borrower VALUES ('324', '628-10-48', 'Martha', 'Mccoy', '74 Claremont Park', '0');\
+INSERT INTO borrower VALUES ('325', '799-41-86', 'Frances', 'Long', '0 Schlimgen Alley', '0');\
+INSERT INTO borrower VALUES ('326', '826-57-47', 'Carolyn', 'Duncan', '1 Merry Place', '0');\
+INSERT INTO borrower VALUES ('327', '497-33-44', 'Ryan', 'Mendoza', '9 Myrtle Way', '0');\
+INSERT INTO borrower VALUES ('328', '733-61-42', 'Jerry', 'Oliver', '0 Vera Alley', '0');\
+INSERT INTO borrower VALUES ('329', '669-72-61', 'Juan', 'Smith', '3 Dixon Parkway', '0');\
+INSERT INTO borrower VALUES ('330', '867-23-46', 'Marilyn', 'White', '769 Mayfield Center', '0');\
+INSERT INTO borrower VALUES ('331', '410-60-89', 'Anne', 'Moreno', '60 Raven Pass', '0');\
+INSERT INTO borrower VALUES ('332', '381-83-92', 'Ruby', 'Greene', '328 Fallview Center', '0');\
+INSERT INTO borrower VALUES ('333', '186-53-81', 'Shawn', 'Rivera', '8 American Hill', '0');\
+INSERT INTO borrower VALUES ('334', '100-08-20', 'Tina', 'Hamilton', '24695 Di Loreto Crossing', '0');\
+INSERT INTO borrower VALUES ('335', '166-29-50', 'Benjamin', 'Graham', '08 New Castle Avenue', '0');\
+INSERT INTO borrower VALUES ('336', '869-23-69', 'Doris', 'Bailey', '5773 Eastlawn Center', '0');\
+INSERT INTO borrower VALUES ('337', '242-20-91', 'Jason', 'Washington', '3225 Vera Lane', '0');\
+INSERT INTO borrower VALUES ('338', '456-04-04', 'Evelyn', 'Wilson', '9873 Kim Center', '0');\
+INSERT INTO borrower VALUES ('339', '812-93-75', 'Steve', 'Cunningham', '5615 Mcbride Park', '0');\
+INSERT INTO borrower VALUES ('340', '696-31-40', 'Henry', 'Howard', '9 Lakewood Avenue', '0');\
+INSERT INTO borrower VALUES ('341', '399-88-05', 'Timothy', 'Crawford', '39384 Tony Terrace', '0');\
+INSERT INTO borrower VALUES ('342', '342-52-54', 'Todd', 'Rose', '8 Mosinee Plaza', '0');\
+INSERT INTO borrower VALUES ('343', '699-25-94', 'Mary', 'Nelson', '8 Colorado Avenue', '0');\
+INSERT INTO borrower VALUES ('344', '188-14-38', 'Jason', 'Watkins', '74155 Welch Terrace', '0');\
+INSERT INTO borrower VALUES ('345', '562-73-50', 'Kathy', 'Cole', '8600 Anniversary Pass', '0');\
+INSERT INTO borrower VALUES ('346', '633-54-28', 'Albert', 'Reyes', '43 Transport Pass', '0');\
+INSERT INTO borrower VALUES ('347', '256-93-51', 'Aaron', 'Harvey', '1807 Prairieview Pass', '0');\
+INSERT INTO borrower VALUES ('348', '973-81-69', 'Jack', 'Ward', '5 Susan Plaza', '0');\
+INSERT INTO borrower VALUES ('349', '324-71-19', 'Dorothy', 'Spencer', '90651 Bellgrove Junction', '0');\
+INSERT INTO borrower VALUES ('350', '227-59-55', 'Lawrence', 'Hunt', '2 Randy Court', '0');\
+INSERT INTO borrower VALUES ('351', '931-62-49', 'Beverly', 'Fernandez', '480 Toban Lane', '0');\
+INSERT INTO borrower VALUES ('352', '625-57-74', 'Karen', 'Johnston', '3 Coleman Plaza', '0');\
+INSERT INTO borrower VALUES ('353', '285-70-43', 'Howard', 'Gonzalez', '7699 Dakota Terrace', '0');\
+INSERT INTO borrower VALUES ('354', '490-16-43', 'Dorothy', 'Graham', '9 Mcguire Alley', '0');\
+INSERT INTO borrower VALUES ('355', '246-40-55', 'Barbara', 'Anderson', '77 Ronald Regan Park', '0');\
+INSERT INTO borrower VALUES ('356', '697-56-68', 'Frances', 'Willis', '61438 Becker Park', '0');\
+INSERT INTO borrower VALUES ('357', '878-94-13', 'Martha', 'Arnold', '52279 Hauk Plaza', '0');\
+INSERT INTO borrower VALUES ('358', '721-32-26', 'Maria', 'Medina', '6 Gina Crossing', '0');\
+INSERT INTO borrower VALUES ('359', '842-65-50', 'Jonathan', 'Fox', '32 Springs Road', '0');\
+INSERT INTO borrower VALUES ('360', '657-17-64', 'Carlos', 'Carter', '96207 3rd Park', '0');\
+INSERT INTO borrower VALUES ('361', '422-81-70', 'Adam', 'Ferguson', '0 Summerview Court', '0');\
+INSERT INTO borrower VALUES ('362', '644-09-03', 'Nicholas', 'Wheeler', '756 Pleasure Circle', '0');\
+INSERT INTO borrower VALUES ('363', '903-98-16', 'Raymond', 'Rogers', '16 Monument Parkway', '0');\
+INSERT INTO borrower VALUES ('364', '847-29-36', 'Brandon', 'Stevens', '94647 Village Junction', '0');\
+INSERT INTO borrower VALUES ('365', '822-62-53', 'Lori', 'Ferguson', '49 Sachtjen Crossing', '0');\
+INSERT INTO borrower VALUES ('366', '629-41-95', 'Roy', 'Turner', '61544 Talmadge Drive', '0');\
+INSERT INTO borrower VALUES ('367', '235-79-85', 'Martha', 'Warren', '94 Vahlen Hill', '0');\
+INSERT INTO borrower VALUES ('368', '265-90-78', 'Ruby', 'Anderson', '0482 Haas Terrace', '0');\
+INSERT INTO borrower VALUES ('369', '694-92-05', 'Steven', 'Bailey', '8987 Lawn Park', '0');\
+INSERT INTO borrower VALUES ('370', '143-30-23', 'Melissa', 'Perkins', '0039 Hanson Court', '0');\
+INSERT INTO borrower VALUES ('371', '344-69-20', 'Ruby', 'Ross', '86591 Roxbury Circle', '0');\
+INSERT INTO borrower VALUES ('372', '566-64-78', 'Billy', 'King', '831 Sutherland Point', '0');\
+INSERT INTO borrower VALUES ('373', '163-65-80', 'Mildred', 'Sanchez', '09 Annamark Circle', '0');\
+INSERT INTO borrower VALUES ('374', '588-45-95', 'Linda', 'Duncan', '09159 Charing Cross Way', '0');\
+INSERT INTO borrower VALUES ('375', '142-74-61', 'Janice', 'Montgomery', '661 Grasskamp Alley', '0');\
+INSERT INTO borrower VALUES ('376', '694-58-31', 'Robin', 'Cox', '0 Gerald Court', '0');\
+INSERT INTO borrower VALUES ('377', '513-11-00', 'Carol', 'Howell', '273 Sullivan Lane', '0');\
+INSERT INTO borrower VALUES ('378', '432-49-78', 'Doris', 'Welch', '74 Oakridge Alley', '0');\
+INSERT INTO borrower VALUES ('379', '204-46-77', 'Debra', 'Kelly', '0 Maywood Street', '0');\
+INSERT INTO borrower VALUES ('380', '597-00-17', 'Scott', 'Morales', '823 Sherman Point', '0');\
+INSERT INTO borrower VALUES ('381', '221-70-65', 'Louise', 'Murphy', '7113 Carpenter Drive', '0');\
+INSERT INTO borrower VALUES ('382', '300-48-52', 'Jack', 'Cruz', '55322 Linden Point', '0');\
+INSERT INTO borrower VALUES ('383', '823-59-75', 'Teresa', 'Carter', '4757 Kingsford Street', '0');\
+INSERT INTO borrower VALUES ('384', '526-53-03', 'Eric', 'Flores', '0 Vera Center', '0');\
+INSERT INTO borrower VALUES ('385', '996-22-65', 'Louis', 'Elliott', '02 Jenna Trail', '0');\
+INSERT INTO borrower VALUES ('386', '688-12-78', 'Nicholas', 'Evans', '13 Russell Lane', '0');\
+INSERT INTO borrower VALUES ('387', '389-89-98', 'Evelyn', 'Bailey', '77832 West Park', '0');\
+INSERT INTO borrower VALUES ('388', '614-07-92', 'Arthur', 'Ray', '3079 Donald Point', '0');\
+INSERT INTO borrower VALUES ('389', '189-81-82', 'Shawn', 'Burns', '51 Nelson Plaza', '0');\
+INSERT INTO borrower VALUES ('390', '874-30-02', 'Henry', 'Wallace', '4139 Spaight Road', '0');\
+INSERT INTO borrower VALUES ('391', '841-42-85', 'Kathy', 'Garcia', '3657 Anhalt Trail', '0');\
+INSERT INTO borrower VALUES ('392', '933-68-68', 'Kenneth', 'Sanchez', '06600 Utah Crossing', '0');\
+INSERT INTO borrower VALUES ('393', '124-81-18', 'Carl', 'Bishop', '01 Goodland Junction', '0');\
+INSERT INTO borrower VALUES ('394', '255-45-01', 'Harry', 'Tucker', '8 Waubesa Parkway', '0');\
+INSERT INTO borrower VALUES ('395', '694-43-13', 'Christopher', 'Marshall', '34693 Warbler Junction', '0');\
+INSERT INTO borrower VALUES ('396', '405-10-97', 'Russell', 'Murphy', '9552 Mandrake Center', '0');\
+INSERT INTO borrower VALUES ('397', '752-91-81', 'Jessica', 'Carr', '9 Sutteridge Pass', '0');\
+INSERT INTO borrower VALUES ('398', '324-70-70', 'Cheryl', 'Moore', '0 2nd Plaza', '0');\
+INSERT INTO borrower VALUES ('399', '903-05-23', 'Lori', 'Carroll', '879 Clarendon Alley', '0');\
+INSERT INTO borrower VALUES ('400', '323-48-31', 'Frank', 'Martin', '428 Lindbergh Way', '0');\
+INSERT INTO borrower VALUES ('401', '748-29-78', 'Joyce', 'Allen', '5911 Troy Pass', '0');\
+INSERT INTO borrower VALUES ('402', '203-92-39', 'Philip', 'Gonzalez', '2 Buhler Street', '0');\
+INSERT INTO borrower VALUES ('403', '483-93-25', 'Nicole', 'Bell', '69 Manitowish Lane', '0');\
+INSERT INTO borrower VALUES ('404', '235-14-11', 'Joseph', 'Perry', '45 Judy Trail', '0');\
+INSERT INTO borrower VALUES ('405', '138-49-99', 'Doris', 'Peterson', '56 Oxford Avenue', '0');\
+INSERT INTO borrower VALUES ('406', '311-51-32', 'Gregory', 'Marshall', '17 Eastwood Terrace', '0');\
+INSERT INTO borrower VALUES ('407', '359-35-20', 'Virginia', 'Kelly', '37408 Morrow Court', '0');\
+INSERT INTO borrower VALUES ('408', '608-20-92', 'Beverly', 'Hawkins', '0 Hovde Terrace', '0');\
+INSERT INTO borrower VALUES ('409', '539-33-75', 'Scott', 'Gonzalez', '623 Westend Way', '0');\
+INSERT INTO borrower VALUES ('410', '407-50-82', 'Paul', 'Mcdonald', '334 Orin Avenue', '0');\
+INSERT INTO borrower VALUES ('411', '158-21-43', 'Dennis', 'Duncan', '05 Mitchell Hill', '0');\
+INSERT INTO borrower VALUES ('412', '146-55-76', 'Mary', 'Ryan', '24029 Nevada Way', '0');\
+INSERT INTO borrower VALUES ('413', '870-93-14', 'Victor', 'Smith', '0 Helena Point', '0');\
+INSERT INTO borrower VALUES ('414', '752-50-35', 'Ruby', 'Murray', '4920 Westend Court', '0');\
+INSERT INTO borrower VALUES ('415', '894-84-48', 'Jean', 'Garza', '91 Havey Plaza', '0');\
+INSERT INTO borrower VALUES ('416', '327-53-60', 'Andrew', 'Jordan', '38498 Park Meadow Crossing', '0');\
+INSERT INTO borrower VALUES ('417', '868-79-04', 'Harry', 'Marshall', '24 Heffernan Crossing', '0');\
+INSERT INTO borrower VALUES ('418', '409-03-90', 'Wayne', 'Franklin', '35 Continental Alley', '0');\
+INSERT INTO borrower VALUES ('419', '653-59-90', 'Lillian', 'Gonzalez', '9922 Arkansas Circle', '0');\
+INSERT INTO borrower VALUES ('420', '718-47-61', 'Rachel', 'Bishop', '70227 Vernon Way', '0');\
+INSERT INTO borrower VALUES ('421', '841-96-38', 'Alan', 'Lynch', '332 Dayton Plaza', '0');\
+INSERT INTO borrower VALUES ('422', '931-94-49', 'Carlos', 'Ray', '62 Monument Park', '0');\
+INSERT INTO borrower VALUES ('423', '720-85-03', 'Frank', 'Taylor', '5 Lien Center', '0');\
+INSERT INTO borrower VALUES ('424', '836-23-86', 'Melissa', 'Burton', '5 Springs Lane', '0');\
+INSERT INTO borrower VALUES ('425', '999-28-20', 'Anne', 'Nelson', '34365 Kropf Park', '0');\
+INSERT INTO borrower VALUES ('426', '919-67-68', 'Amanda', 'Bailey', '29 Continental Point', '0');\
+INSERT INTO borrower VALUES ('427', '362-09-98', 'Chris', 'Duncan', '35 Alpine Avenue', '0');\
+INSERT INTO borrower VALUES ('428', '762-37-80', 'Elizabeth', 'Gibson', '6602 Namekagon Way', '0');\
+INSERT INTO borrower VALUES ('429', '424-50-17', 'Keith', 'Brown', '471 Burning Wood Park', '0');\
+INSERT INTO borrower VALUES ('430', '221-74-28', 'Karen', 'Sanchez', '71 Old Gate Point', '0');\
+INSERT INTO borrower VALUES ('431', '467-35-12', 'Marilyn', 'Meyer', '3981 Lerdahl Point', '0');\
+INSERT INTO borrower VALUES ('432', '142-41-88', 'Harold', 'Little', '81271 Evergreen Lane', '0');\
+INSERT INTO borrower VALUES ('433', '626-74-99', 'Henry', 'Dean', '4913 Brentwood Center', '0');\
+INSERT INTO borrower VALUES ('434', '468-99-74', 'Joyce', 'Rivera', '3 Johnson Pass', '0');\
+INSERT INTO borrower VALUES ('435', '560-85-14', 'Marie', 'Johnson', '6 Graedel Street', '0');\
+INSERT INTO borrower VALUES ('436', '650-87-60', 'Aaron', 'Clark', '5169 Bashford Point', '0');\
+INSERT INTO borrower VALUES ('437', '262-55-89', 'Anne', 'Campbell', '0140 Grover Place', '0');\
+INSERT INTO borrower VALUES ('438', '691-11-14', 'Janice', 'Garrett', '439 Prentice Hill', '0');\
+INSERT INTO borrower VALUES ('439', '772-97-86', 'Bobby', 'Johnson', '7 Moulton Crossing', '0');\
+INSERT INTO borrower VALUES ('440', '807-93-70', 'Fred', 'Welch', '0 Lukken Alley', '0');\
+INSERT INTO borrower VALUES ('441', '464-18-87', 'Laura', 'Chapman', '304 Lunder Hill', '0');\
+INSERT INTO borrower VALUES ('442', '307-70-27', 'Albert', 'Castillo', '2 Beilfuss Center', '0');\
+INSERT INTO borrower VALUES ('443', '528-91-75', 'Julia', 'Oliver', '42421 Farmco Street', '0');\
+INSERT INTO borrower VALUES ('444', '408-53-05', 'David', 'Russell', '57840 Laurel Alley', '0');\
+INSERT INTO borrower VALUES ('445', '520-76-60', 'Russell', 'Montgomery', '18 Hagan Pass', '0');\
+INSERT INTO borrower VALUES ('446', '660-90-82', 'Joe', 'Price', '1 Leroy Park', '0');\
+INSERT INTO borrower VALUES ('447', '799-34-00', 'Anthony', 'Harrison', '7123 Bunker Hill Junction', '0');\
+INSERT INTO borrower VALUES ('448', '870-49-66', 'Gregory', 'Hudson', '42 Park Meadow Park', '0');\
+INSERT INTO borrower VALUES ('449', '707-63-82', 'Michelle', 'Chapman', '29 Rieder Pass', '0');\
+INSERT INTO borrower VALUES ('450', '469-39-13', 'Chris', 'Bailey', '8 South Court', '0');\
+INSERT INTO borrower VALUES ('451', '553-57-07', 'Kevin', 'Wood', '0 Pierstorff Park', '0');\
+INSERT INTO borrower VALUES ('452', '316-43-61', 'Louise', 'Spencer', '4462 Blaine Avenue', '0');\
+INSERT INTO borrower VALUES ('453', '455-51-26', 'Ruth', 'Lee', '58 Waubesa Avenue', '0');\
+INSERT INTO borrower VALUES ('454', '995-34-99', 'Carolyn', 'Alexander', '634 Judy Pass', '0');\
+INSERT INTO borrower VALUES ('455', '149-26-93', 'Barbara', 'Rivera', '93 North Pass', '0');\
+INSERT INTO borrower VALUES ('456', '889-46-96', 'Adam', 'Mcdonald', '20734 Beilfuss Park', '0');\
+INSERT INTO borrower VALUES ('457', '242-32-17', 'Sara', 'Graham', '4992 Ridgeview Court', '0');\
+INSERT INTO borrower VALUES ('458', '900-93-12', 'Henry', 'Spencer', '919 7th Plaza', '0');\
+INSERT INTO borrower VALUES ('459', '669-83-74', 'Lillian', 'Austin', '8 Eagle Crest Way', '0');\
+INSERT INTO borrower VALUES ('460', '989-79-15', 'Jerry', 'Pierce', '16 Charing Cross Center', '0');\
+INSERT INTO borrower VALUES ('461', '336-44-78', 'Emily', 'Ruiz', '1 Claremont Junction', '0');\
+INSERT INTO borrower VALUES ('462', '928-58-04', 'Lillian', 'Baker', '111 Village Plaza', '0');\
+INSERT INTO borrower VALUES ('463', '186-05-20', 'Ruth', 'Butler', '41052 Waubesa Lane', '0');\
+INSERT INTO borrower VALUES ('464', '922-11-36', 'Catherine', 'Welch', '666 Kim Crossing', '0');\
+INSERT INTO borrower VALUES ('465', '209-54-92', 'Howard', 'Castillo', '4069 Oneill Point', '0');\
+INSERT INTO borrower VALUES ('466', '352-50-99', 'Justin', 'Sanders', '2 Mayer Junction', '0');\
+INSERT INTO borrower VALUES ('467', '651-14-83', 'Ronald', 'Roberts', '25 South Lane', '0');\
+INSERT INTO borrower VALUES ('468', '724-31-56', 'Jane', 'Harrison', '8070 Clarendon Parkway', '0');\
+INSERT INTO borrower VALUES ('469', '506-88-84', 'Benjamin', 'Grant', '89750 Kenwood Crossing', '0');\
+INSERT INTO borrower VALUES ('470', '581-20-42', 'Harry', 'Miller', '721 High Crossing Court', '0');\
+INSERT INTO borrower VALUES ('471', '878-06-04', 'Matthew', 'Burke', '735 Toban Park', '0');\
+INSERT INTO borrower VALUES ('472', '246-12-31', 'Christine', 'Chavez', '560 Atwood Pass', '0');\
+INSERT INTO borrower VALUES ('473', '938-95-91', 'Eric', 'Hernandez', '80149 Haas Court', '0');\
+INSERT INTO borrower VALUES ('474', '734-24-80', 'Diana', 'Jones', '499 Pearson Junction', '0');\
+INSERT INTO borrower VALUES ('475', '829-11-91', 'Janet', 'Rice', '35291 Bunker Hill Way', '0');\
+INSERT INTO borrower VALUES ('476', '744-91-09', 'Diane', 'Ruiz', '36 Cambridge Park', '0');\
+INSERT INTO borrower VALUES ('477', '981-13-11', 'Theresa', 'Russell', '589 Northwestern Park', '0');\
+INSERT INTO borrower VALUES ('478', '770-00-57', 'Wayne', 'Hunt', '9818 Westend Center', '0');\
+INSERT INTO borrower VALUES ('479', '842-92-75', 'Virginia', 'Gordon', '76 Tony Road', '0');\
+INSERT INTO borrower VALUES ('480', '737-53-34', 'Gloria', 'Rice', '9 Golf View Alley', '0');\
+INSERT INTO borrower VALUES ('481', '451-56-25', 'Mildred', 'Butler', '67 Westerfield Avenue', '0');\
+INSERT INTO borrower VALUES ('482', '368-38-17', 'Debra', 'West', '4799 Melody Parkway', '0');\
+INSERT INTO borrower VALUES ('483', '199-36-91', 'Nancy', 'Wheeler', '737 Doe Crossing Trail', '0');\
+INSERT INTO borrower VALUES ('484', '931-76-28', 'Lawrence', 'Stone', '8 Darwin Alley', '0');\
+INSERT INTO borrower VALUES ('485', '371-28-81', 'Rachel', 'Reyes', '6 Anniversary Alley', '0');\
+INSERT INTO borrower VALUES ('486', '435-69-47', 'Amanda', 'Simpson', '15 Dixon Street', '0');\
+INSERT INTO borrower VALUES ('487', '235-32-39', 'Lori', 'Carroll', '213 Forest Point', '0');\
+INSERT INTO borrower VALUES ('488', '148-55-66', 'Bobby', 'Austin', '62352 Pankratz Road', '0');\
+INSERT INTO borrower VALUES ('489', '253-35-68', 'Brenda', 'Carpenter', '6664 Prairie Rose Point', '0');\
+INSERT INTO borrower VALUES ('490', '817-44-19', 'Sharon', 'Mason', '33 Moulton Lane', '0');\
+INSERT INTO borrower VALUES ('491', '639-31-49', 'Joshua', 'Ross', '4376 Kropf Road', '0');\
+INSERT INTO borrower VALUES ('492', '926-53-13', 'Melissa', 'Mccoy', '08770 Moland Lane', '0');\
+INSERT INTO borrower VALUES ('493', '728-54-98', 'Bobby', 'Kelly', '79 Burning Wood Pass', '0');\
+INSERT INTO borrower VALUES ('494', '846-65-08', 'Jennifer', 'Ortiz', '25989 Mccormick Drive', '0');\
+INSERT INTO borrower VALUES ('495', '810-70-43', 'Chris', 'Carter', '50486 Grim Alley', '0');\
+INSERT INTO borrower VALUES ('496', '919-26-63', 'Christopher', 'Gonzales', '49163 Moose Point', '0');\
+INSERT INTO borrower VALUES ('497', '966-29-44', 'Albert', 'Gibson', '90 Lillian Trail', '0');\
+INSERT INTO borrower VALUES ('498', '435-99-96', 'Doris', 'Rose', '1891 Melrose Terrace', '0');\
+INSERT INTO borrower VALUES ('499', '416-21-67', 'Marilyn', 'Jordan', '61 Eagle Crest Junction', '0');\
+INSERT INTO borrower VALUES ('500', '306-68-01', 'Joe', 'Bowman', '26225 8th Road', '0');\
+INSERT INTO borrower VALUES ('501', '840-12-31', 'Denise', 'Price', '46 Knutson Drive', '0');\
+INSERT INTO borrower VALUES ('502', '332-41-05', 'Evelyn', 'Edwards', '7867 Nancy Park', '0');\
+INSERT INTO borrower VALUES ('503', '196-02-74', 'Kimberly', 'Hernandez', '2 Buell Drive', '0');\
+INSERT INTO borrower VALUES ('504', '388-55-14', 'Norma', 'Boyd', '35 Service Court', '0');\
+INSERT INTO borrower VALUES ('505', '395-16-70', 'Sharon', 'Ramos', '39 Daystar Hill', '0');\
+INSERT INTO borrower VALUES ('506', '541-25-50', 'Rachel', 'Riley', '01017 Jay Plaza', '0');\
+INSERT INTO borrower VALUES ('507', '132-58-80', 'Randy', 'Jenkins', '794 Buena Vista Road', '0');\
+INSERT INTO borrower VALUES ('508', '774-38-40', 'John', 'Clark', '0708 North Terrace', '0');\
+INSERT INTO borrower VALUES ('509', '495-55-09', 'Ruby', 'Hansen', '8756 Wayridge Drive', '0');\
+INSERT INTO borrower VALUES ('510', '739-90-92', 'Ashley', 'Peters', '28880 4th Alley', '0');\
+INSERT INTO borrower VALUES ('511', '377-63-82', 'Albert', 'Garcia', '0 Maple Terrace', '0');\
+INSERT INTO borrower VALUES ('512', '150-30-22', 'Clarence', 'Holmes', '291 1st Terrace', '0');\
+INSERT INTO borrower VALUES ('513', '849-92-83', 'Julie', 'Parker', '3377 Dahle Street', '0');\
+INSERT INTO borrower VALUES ('514', '953-43-14', 'Michael', 'Martinez', '0967 Melrose Avenue', '0');\
+INSERT INTO borrower VALUES ('515', '337-86-80', 'William', 'Berry', '9 Hagan Street', '0');\
+INSERT INTO borrower VALUES ('516', '465-95-88', 'Gerald', 'Burke', '5175 Florence Center', '0');\
+INSERT INTO borrower VALUES ('517', '960-83-93', 'Linda', 'Rodriguez', '2427 Reindahl Park', '0');\
+INSERT INTO borrower VALUES ('518', '709-91-16', 'Terry', 'Stephens', '27291 Farragut Court', '0');\
+INSERT INTO borrower VALUES ('519', '423-06-42', 'Timothy', 'Hunt', '4219 Westport Hill', '0');\
+INSERT INTO borrower VALUES ('520', '622-29-97', 'Richard', 'Cruz', '813 Darwin Avenue', '0');\
+INSERT INTO borrower VALUES ('521', '631-12-87', 'Gregory', 'Gomez', '3993 American Circle', '0');\
+INSERT INTO borrower VALUES ('522', '699-59-06', 'Louise', 'Garza', '14760 Bobwhite Terrace', '0');\
+INSERT INTO borrower VALUES ('523', '762-63-80', 'James', 'Adams', '055 Alpine Way', '0');\
+INSERT INTO borrower VALUES ('524', '149-42-13', 'Victor', 'Gardner', '12141 Corscot Junction', '0');\
+INSERT INTO borrower VALUES ('525', '531-67-59', 'Ernest', 'Lane', '66226 Nova Way', '0');\
+INSERT INTO borrower VALUES ('526', '156-63-19', 'Joe', 'Griffin', '205 Fuller Plaza', '0');\
+INSERT INTO borrower VALUES ('527', '664-38-42', 'Sean', 'Kelly', '3 Gerald Court', '0');\
+INSERT INTO borrower VALUES ('528', '662-87-79', 'Angela', 'Turner', '53 Colorado Pass', '0');\
+INSERT INTO borrower VALUES ('529', '678-62-84', 'Jerry', 'Howard', '68198 Monterey Parkway', '0');\
+INSERT INTO borrower VALUES ('530', '216-37-27', 'Ashley', 'Lopez', '405 Hovde Way', '0');\
+INSERT INTO borrower VALUES ('531', '302-51-03', 'Albert', 'Marshall', '933 Claremont Avenue', '0');\
+INSERT INTO borrower VALUES ('532', '194-03-36', 'Michelle', 'Williams', '07 Marquette Road', '0');\
+INSERT INTO borrower VALUES ('533', '303-31-88', 'Sharon', 'Wells', '23 Twin Pines Parkway', '0');\
+INSERT INTO borrower VALUES ('534', '785-25-41', 'Doris', 'Gordon', '358 Pearson Court', '0');\
+INSERT INTO borrower VALUES ('535', '395-22-81', 'Patricia', 'Long', '76 Jana Place', '0');\
+INSERT INTO borrower VALUES ('536', '374-21-64', 'Helen', 'Lee', '65137 Summerview Crossing', '0');\
+INSERT INTO borrower VALUES ('537', '746-77-10', 'Kimberly', 'Collins', '9629 Delaware Crossing', '0');\
+INSERT INTO borrower VALUES ('538', '376-27-25', 'Mary', 'Dunn', '6848 Sunbrook Parkway', '0');\
+INSERT INTO borrower VALUES ('539', '756-45-39', 'Amy', 'Harper', '5863 Boyd Drive', '0');\
+INSERT INTO borrower VALUES ('540', '873-25-32', 'Bobby', 'Long', '35 Paget Circle', '0');\
+INSERT INTO borrower VALUES ('541', '447-50-86', 'Sara', 'Young', '71916 Sherman Point', '0');\
+INSERT INTO borrower VALUES ('542', '303-61-31', 'Kathy', 'Oliver', '0 Victoria Junction', '0');\
+INSERT INTO borrower VALUES ('543', '693-54-62', 'Ruby', 'Ray', '17 Hermina Point', '0');\
+INSERT INTO borrower VALUES ('544', '107-16-47', 'Lori', 'Schmidt', '181 Rowland Hill', '0');\
+INSERT INTO borrower VALUES ('545', '160-60-29', 'Raymond', 'Fox', '1 Farwell Avenue', '0');\
+INSERT INTO borrower VALUES ('546', '192-57-31', 'Nancy', 'Turner', '1 Vermont Alley', '0');\
+INSERT INTO borrower VALUES ('547', '214-13-77', 'Gregory', 'Richards', '9 Vidon Street', '0');\
+INSERT INTO borrower VALUES ('548', '480-37-24', 'Lawrence', 'Perez', '6441 Derek Junction', '0');\
+INSERT INTO borrower VALUES ('549', '279-03-23', 'Thomas', 'Pierce', '73803 Prairieview Alley', '0');\
+INSERT INTO borrower VALUES ('550', '860-31-53', 'Steve', 'Larson', '6 Nobel Trail', '0');\
+INSERT INTO borrower VALUES ('551', '375-32-08', 'Aaron', 'Coleman', '62 Golden Leaf Crossing', '0');\
+INSERT INTO borrower VALUES ('552', '335-17-50', 'Joe', 'Daniels', '916 Marcy Way', '0');\
+INSERT INTO borrower VALUES ('553', '273-16-34', 'Theresa', 'Porter', '8868 Blaine Pass', '0');\
+INSERT INTO borrower VALUES ('554', '690-78-47', 'Kathleen', 'Crawford', '44 Elmside Place', '0');\
+INSERT INTO borrower VALUES ('555', '371-48-98', 'Joe', 'Bradley', '90362 Kipling Plaza', '0');\
+INSERT INTO borrower VALUES ('556', '957-05-09', 'Paul', 'Jacobs', '512 Tennessee Place', '0');\
+INSERT INTO borrower VALUES ('557', '229-10-80', 'Andrew', 'Reid', '7654 Moland Terrace', '0');\
+INSERT INTO borrower VALUES ('558', '714-89-82', 'Ralph', 'George', '072 Merchant Trail', '0');\
+INSERT INTO borrower VALUES ('559', '401-33-53', 'Jeremy', 'Brown', '2 Old Shore Park', '0');\
+INSERT INTO borrower VALUES ('560', '953-58-55', 'Nicholas', 'Kennedy', '2067 Jana Parkway', '0');\
+INSERT INTO borrower VALUES ('561', '818-63-47', 'Ronald', 'Wells', '37 Prairieview Parkway', '0');\
+INSERT INTO borrower VALUES ('562', '984-16-02', 'Albert', 'Gilbert', '7169 Scoville Avenue', '0');\
+INSERT INTO borrower VALUES ('563', '762-90-98', 'Jason', 'Turner', '208 Summit Park', '0');\
+INSERT INTO borrower VALUES ('564', '229-26-61', 'Arthur', 'Spencer', '624 Kropf Terrace', '0');\
+INSERT INTO borrower VALUES ('565', '673-35-93', 'Bonnie', 'Ray', '20935 Vahlen Pass', '0');\
+INSERT INTO borrower VALUES ('566', '414-82-63', 'Carol', 'Ryan', '43 Sloan Avenue', '0');\
+INSERT INTO borrower VALUES ('567', '832-18-40', 'Kevin', 'Little', '244 Tony Center', '0');\
+INSERT INTO borrower VALUES ('568', '562-28-17', 'Todd', 'Hall', '3896 Corscot Circle', '0');\
+INSERT INTO borrower VALUES ('569', '243-20-46', 'Ralph', 'Hart', '16083 Lillian Crossing', '0');\
+INSERT INTO borrower VALUES ('570', '152-91-14', 'Ruby', 'Martin', '6 Merry Trail', '0');\
+INSERT INTO borrower VALUES ('571', '200-92-40', 'Julia', 'Kim', '30 Corscot Terrace', '0');\
+INSERT INTO borrower VALUES ('572', '869-20-24', 'Lawrence', 'Reyes', '70001 Lunder Pass', '0');\
+INSERT INTO borrower VALUES ('573', '766-56-66', 'Ronald', 'Rivera', '0 Fuller Trail', '0');\
+INSERT INTO borrower VALUES ('574', '966-33-95', 'Kenneth', 'Medina', '652 Melody Avenue', '0');\
+INSERT INTO borrower VALUES ('575', '761-70-92', 'Angela', 'Clark', '916 Elka Place', '0');\
+INSERT INTO borrower VALUES ('576', '191-21-01', 'Diane', 'Brown', '4221 Petterle Junction', '0');\
+INSERT INTO borrower VALUES ('577', '597-21-18', 'Jack', 'Ward', '00625 Warner Street', '0');\
+INSERT INTO borrower VALUES ('578', '175-99-00', 'Roger', 'Powell', '48387 Corben Junction', '0');\
+INSERT INTO borrower VALUES ('579', '541-56-26', 'Rachel', 'Cook', '214 Eastwood Hill', '0');\
+INSERT INTO borrower VALUES ('580', '454-07-81', 'Karen', 'Burke', '09242 Victoria Plaza', '0');\
+INSERT INTO borrower VALUES ('581', '947-35-19', 'Kimberly', 'Robinson', '26233 Oneill Junction', '0');\
+INSERT INTO borrower VALUES ('582', '679-65-60', 'Samuel', 'Bryant', '95 Pearson Pass', '0');\
+INSERT INTO borrower VALUES ('583', '522-26-59', 'Russell', 'Berry', '27 Moose Plaza', '0');\
+INSERT INTO borrower VALUES ('584', '624-87-75', 'Paula', 'Frazier', '713 Havey Court', '0');\
+INSERT INTO borrower VALUES ('585', '502-80-03', 'Anna', 'Rice', '9 Lunder Center', '0');\
+INSERT INTO borrower VALUES ('586', '385-99-41', 'Diane', 'Stanley', '96 Roth Hill', '0');\
+INSERT INTO borrower VALUES ('587', '678-08-89', 'Billy', 'Snyder', '8170 Clarendon Crossing', '0');\
+INSERT INTO borrower VALUES ('588', '850-26-94', 'Juan', 'Bailey', '6 Logan Crossing', '0');\
+INSERT INTO borrower VALUES ('589', '119-17-46', 'Patricia', 'Green', '27001 Mayfield Street', '0');\
+INSERT INTO borrower VALUES ('590', '640-57-89', 'Louise', 'Harrison', '4383 Forest Dale Hill', '0');\
+INSERT INTO borrower VALUES ('591', '915-81-50', 'Scott', 'Cunningham', '1312 Kinsman Terrace', '0');\
+INSERT INTO borrower VALUES ('592', '287-08-21', 'Steve', 'White', '57 Vera Lane', '0');\
+INSERT INTO borrower VALUES ('593', '915-62-62', 'Brandon', 'Jones', '8845 Blackbird Terrace', '0');\
+INSERT INTO borrower VALUES ('594', '622-62-28', 'Rebecca', 'Reed', '012 Sunbrook Place', '0');\
+INSERT INTO borrower VALUES ('595', '330-90-18', 'Kelly', 'Hawkins', '517 Bay Crossing', '0');\
+INSERT INTO borrower VALUES ('596', '159-37-41', 'Kenneth', 'Hudson', '16 Porter Trail', '0');\
+INSERT INTO borrower VALUES ('597', '332-96-23', 'Tammy', 'Butler', '0897 Amoth Hill', '0');\
+INSERT INTO borrower VALUES ('598', '179-13-68', 'Steven', 'Lane', '0185 Hollow Ridge Street', '0');\
+INSERT INTO borrower VALUES ('599', '640-94-53', 'Jean', 'West', '5487 Tomscot Place', '0');\
+INSERT INTO borrower VALUES ('600', '381-83-41', 'Keith', 'Mason', '1 Norway Maple Park', '0');\
+INSERT INTO borrower VALUES ('601', '480-06-18', 'Jose', 'Morales', '36703 Pennsylvania Center', '0');\
+INSERT INTO borrower VALUES ('602', '360-26-25', 'Johnny', 'Harris', '816 Ramsey Pass', '0');\
+INSERT INTO borrower VALUES ('603', '271-80-37', 'Harold', 'Romero', '864 Clove Plaza', '0');\
+INSERT INTO borrower VALUES ('604', '161-60-22', 'Jose', 'Phillips', '726 Farwell Road', '0');\
+INSERT INTO borrower VALUES ('605', '968-21-31', 'Tina', 'Nguyen', '7814 Fairview Avenue', '0');\
+INSERT INTO borrower VALUES ('606', '994-00-71', 'Michelle', 'Hill', '70 Jana Plaza', '0');\
+INSERT INTO borrower VALUES ('607', '164-07-03', 'Henry', 'Powell', '1 Arapahoe Plaza', '0');\
+INSERT INTO borrower VALUES ('608', '491-05-72', 'Donna', 'Nelson', '4 Homewood Alley', '0');\
+INSERT INTO borrower VALUES ('609', '511-95-41', 'Louis', 'Perry', '1655 Heffernan Pass', '0');\
+INSERT INTO borrower VALUES ('610', '196-78-43', 'Paul', 'Lee', '41406 Ridge Oak Parkway', '0');\
+INSERT INTO borrower VALUES ('611', '112-60-20', 'Diana', 'King', '65113 Saint Paul Court', '0');\
+INSERT INTO borrower VALUES ('612', '376-03-67', 'Evelyn', 'Campbell', '68 Mifflin Court', '0');\
+INSERT INTO borrower VALUES ('613', '277-81-51', 'Louis', 'Howard', '0 Lyons Park', '0');\
+INSERT INTO borrower VALUES ('614', '658-05-16', 'Irene', 'Robinson', '04 Fairfield Parkway', '0');\
+INSERT INTO borrower VALUES ('615', '155-87-23', 'Alice', 'Armstrong', '7068 Derek Alley', '0');\
+INSERT INTO borrower VALUES ('616', '665-02-89', 'Eugene', 'Woods', '56245 Graceland Way', '0');\
+INSERT INTO borrower VALUES ('617', '670-32-53', 'Louis', 'Taylor', '09508 Thackeray Center', '0');\
+INSERT INTO borrower VALUES ('618', '416-31-23', 'Deborah', 'Owens', '12322 Hayes Center', '0');\
+INSERT INTO borrower VALUES ('619', '346-41-42', 'Marilyn', 'Collins', '305 1st Crossing', '0');\
+INSERT INTO borrower VALUES ('620', '475-06-72', 'Virginia', 'Gonzalez', '03722 Huxley Point', '0');\
+INSERT INTO borrower VALUES ('621', '701-28-59', 'Helen', 'Ryan', '51 Kennedy Parkway', '0');\
+INSERT INTO borrower VALUES ('622', '646-84-11', 'John', 'Myers', '4 Mendota Junction', '0');\
+INSERT INTO borrower VALUES ('623', '748-14-16', 'Mary', 'Collins', '261 Almo Alley', '0');\
+INSERT INTO borrower VALUES ('624', '802-79-04', 'Raymond', 'Carter', '71 Eastwood Way', '0');\
+INSERT INTO borrower VALUES ('625', '124-07-98', 'Mary', 'Ramos', '6 Anderson Lane', '0');\
+INSERT INTO borrower VALUES ('626', '311-30-56', 'Kathy', 'Ferguson', '20 7th Place', '0');\
+INSERT INTO borrower VALUES ('627', '156-04-83', 'Clarence', 'Morales', '4645 Homewood Trail', '0');\
+INSERT INTO borrower VALUES ('628', '590-28-75', 'Teresa', 'Campbell', '0241 Bultman Point', '0');\
+INSERT INTO borrower VALUES ('629', '157-33-00', 'Roger', 'Nguyen', '249 Marquette Center', '0');\
+INSERT INTO borrower VALUES ('630', '326-20-85', 'Phyllis', 'Long', '9 Bluestem Circle', '0');\
+INSERT INTO borrower VALUES ('631', '536-17-50', 'Michael', 'Taylor', '18398 Florence Place', '0');\
+INSERT INTO borrower VALUES ('632', '906-45-20', 'John', 'Watkins', '1669 Ridgeview Hill', '0');\
+INSERT INTO borrower VALUES ('633', '336-89-23', 'Carolyn', 'Garcia', '9 Dapin Trail', '0');\
+INSERT INTO borrower VALUES ('634', '255-25-61', 'Donald', 'Phillips', '7 Alpine Alley', '0');\
+INSERT INTO borrower VALUES ('635', '292-88-02', 'Deborah', 'Watson', '75 Carey Parkway', '0');\
+INSERT INTO borrower VALUES ('636', '640-78-62', 'Annie', 'Shaw', '66820 Bunting Plaza', '0');\
+INSERT INTO borrower VALUES ('637', '847-47-85', 'Alan', 'Price', '84 Rutledge Junction', '0');\
+INSERT INTO borrower VALUES ('638', '126-26-36', 'Kathryn', 'Morrison', '59100 Onsgard Crossing', '0');\
+INSERT INTO borrower VALUES ('639', '471-61-63', 'Christopher', 'Johnson', '777 Ludington Terrace', '0');\
+INSERT INTO borrower VALUES ('640', '439-03-85', 'Joshua', 'Bishop', '0 Grim Place', '0');\
+INSERT INTO borrower VALUES ('641', '391-22-23', 'Ernest', 'Jones', '8085 Weeping Birch Alley', '0');\
+INSERT INTO borrower VALUES ('642', '897-34-66', 'Melissa', 'Banks', '578 Reindahl Trail', '0');\
+INSERT INTO borrower VALUES ('643', '985-72-24', 'Arthur', 'Lane', '26696 Steensland Court', '0');\
+INSERT INTO borrower VALUES ('644', '325-85-61', 'Joyce', 'Perkins', '8 Bluestem Park', '0');\
+INSERT INTO borrower VALUES ('645', '506-85-14', 'Judith', 'Sullivan', '95194 Badeau Trail', '0');\
+INSERT INTO borrower VALUES ('646', '103-27-37', 'Billy', 'Johnson', '95272 Kensington Plaza', '0');\
+INSERT INTO borrower VALUES ('647', '378-57-97', 'Marie', 'Bell', '74 Anderson Avenue', '0');\
+INSERT INTO borrower VALUES ('648', '764-94-70', 'Jimmy', 'Ford', '14311 Merchant Court', '0');\
+INSERT INTO borrower VALUES ('649', '667-37-51', 'Alice', 'Mccoy', '6 Nelson Avenue', '0');\
+INSERT INTO borrower VALUES ('650', '946-02-53', 'Richard', 'Matthews', '121 Warrior Alley', '0');\
+INSERT INTO borrower VALUES ('651', '143-59-36', 'Daniel', 'Foster', '84 Charing Cross Avenue', '0');\
+INSERT INTO borrower VALUES ('652', '251-35-03', 'Earl', 'Banks', '0 Lindbergh Place', '0');\
+INSERT INTO borrower VALUES ('653', '709-47-12', 'Scott', 'Rogers', '9 Gulseth Circle', '0');\
+INSERT INTO borrower VALUES ('654', '211-17-97', 'Richard', 'Baker', '68093 Ridge Oak Junction', '0');\
+INSERT INTO borrower VALUES ('655', '375-17-92', 'Robin', 'Mcdonald', '3407 Old Gate Circle', '0');\
+INSERT INTO borrower VALUES ('656', '512-45-06', 'Victor', 'Riley', '219 Fair Oaks Park', '0');\
+INSERT INTO borrower VALUES ('657', '727-22-07', 'Anne', 'Lopez', '62 Truax Terrace', '0');\
+INSERT INTO borrower VALUES ('658', '315-71-57', 'Margaret', 'Fisher', '53744 Prentice Alley', '0');\
+INSERT INTO borrower VALUES ('659', '897-19-48', 'Amanda', 'Perkins', '629 Troy Way', '0');\
+INSERT INTO borrower VALUES ('660', '619-76-58', 'Linda', 'Perry', '83189 Esch Circle', '0');\
+INSERT INTO borrower VALUES ('661', '272-90-89', 'Wanda', 'Lawrence', '6239 Mandrake Alley', '0');\
+INSERT INTO borrower VALUES ('662', '100-07-83', 'Tina', 'Mitchell', '42613 Pankratz Hill', '0');\
+INSERT INTO borrower VALUES ('663', '392-34-34', 'Jacqueline', 'Gordon', '3603 Vernon Junction', '0');\
+INSERT INTO borrower VALUES ('664', '850-03-58', 'Betty', 'Hunt', '79 Welch Court', '0');\
+INSERT INTO borrower VALUES ('665', '190-47-57', 'Kevin', 'Webb', '156 Lukken Lane', '0');\
+INSERT INTO borrower VALUES ('666', '529-87-40', 'Joshua', 'Evans', '225 Dixon Center', '0');\
+INSERT INTO borrower VALUES ('667', '836-54-20', 'Kathleen', 'Peters', '5024 Park Meadow Park', '0');\
+INSERT INTO borrower VALUES ('668', '265-54-13', 'Marie', 'Mason', '651 Cody Trail', '0');\
+INSERT INTO borrower VALUES ('669', '941-12-61', 'Jean', 'Morrison', '68 Stuart Parkway', '0');\
+INSERT INTO borrower VALUES ('670', '190-47-82', 'Daniel', 'Hudson', '16609 Oak Valley Plaza', '0');\
+INSERT INTO borrower VALUES ('671', '318-20-10', 'Judith', 'Dixon', '8 Almo Court', '0');\
+INSERT INTO borrower VALUES ('672', '963-64-22', 'Roy', 'Morales', '05025 Muir Point', '0');\
+INSERT INTO borrower VALUES ('673', '531-84-38', 'Justin', 'Marshall', '972 Crownhardt Circle', '0');\
+INSERT INTO borrower VALUES ('674', '635-15-61', 'Gregory', 'Smith', '59810 Erie Circle', '0');\
+INSERT INTO borrower VALUES ('675', '552-29-08', 'Deborah', 'Reed', '426 Swallow Hill', '0');\
+INSERT INTO borrower VALUES ('676', '578-14-72', 'Pamela', 'King', '1754 Pennsylvania Way', '0');\
+INSERT INTO borrower VALUES ('677', '520-65-92', 'Alan', 'Welch', '1102 Magdeline Court', '0');\
+INSERT INTO borrower VALUES ('678', '393-11-90', 'Samuel', 'Moore', '41307 Grasskamp Drive', '0');\
+INSERT INTO borrower VALUES ('679', '343-72-63', 'Katherine', 'Holmes', '0 Rowland Avenue', '0');\
+INSERT INTO borrower VALUES ('680', '900-26-21', 'Harold', 'Williams', '7576 Vermont Plaza', '0');\
+INSERT INTO borrower VALUES ('681', '133-85-22', 'Evelyn', 'Nguyen', '590 Independence Circle', '0');\
+INSERT INTO borrower VALUES ('682', '824-55-45', 'Joe', 'Cooper', '1421 Linden Avenue', '0');\
+INSERT INTO borrower VALUES ('683', '784-92-20', 'Helen', 'Fernandez', '70499 Michigan Circle', '0');\
+INSERT INTO borrower VALUES ('684', '151-58-64', 'Nicholas', 'Gibson', '2454 Clemons Crossing', '0');\
+INSERT INTO borrower VALUES ('685', '122-74-85', 'Angela', 'Tucker', '50 Brentwood Crossing', '0');\
+INSERT INTO borrower VALUES ('686', '917-44-49', 'Amy', 'Washington', '93083 Elka Lane', '0');\
+INSERT INTO borrower VALUES ('687', '688-02-54', 'Gregory', 'Sanchez', '230 Briar Crest Road', '0');\
+INSERT INTO borrower VALUES ('688', '941-81-24', 'Terry', 'Kennedy', '55 Summer Ridge Point', '0');\
+INSERT INTO borrower VALUES ('689', '370-79-51', 'Charles', 'Bradley', '10 Kenwood Avenue', '0');\
+INSERT INTO borrower VALUES ('690', '972-75-61', 'Judy', 'Gilbert', '0 Roth Alley', '0');\
+INSERT INTO borrower VALUES ('691', '820-05-99', 'Paul', 'Chapman', '57011 Reindahl Terrace', '0');\
+INSERT INTO borrower VALUES ('692', '536-88-76', 'Cheryl', 'Taylor', '4916 Stang Hill', '0');\
+INSERT INTO borrower VALUES ('693', '753-82-47', 'Linda', 'Nelson', '46 Lukken Hill', '0');\
+INSERT INTO borrower VALUES ('694', '617-28-14', 'Edward', 'Harvey', '2989 Leroy Point', '0');\
+INSERT INTO borrower VALUES ('695', '735-50-35', 'Carolyn', 'Chapman', '9524 Amoth Lane', '0');\
+INSERT INTO borrower VALUES ('696', '525-50-22', 'Jack', 'Hudson', '2 Claremont Drive', '0');\
+INSERT INTO borrower VALUES ('697', '534-11-44', 'Adam', 'Gardner', '907 Corben Alley', '0');\
+INSERT INTO borrower VALUES ('698', '363-38-96', 'Julia', 'Pierce', '8 Heath Avenue', '0');\
+INSERT INTO borrower VALUES ('699', '407-53-16', 'Janet', 'Robertson', '20 Mesta Plaza', '0');\
+INSERT INTO borrower VALUES ('700', '240-04-11', 'Maria', 'Romero', '188 Loeprich Drive', '0');\
+INSERT INTO borrower VALUES ('701', '472-98-63', 'Diana', 'Rogers', '58 Welch Place', '0');\
+INSERT INTO borrower VALUES ('702', '663-09-01', 'Evelyn', 'Carter', '8 Fair Oaks Alley', '0');\
+INSERT INTO borrower VALUES ('703', '535-55-56', 'Bruce', 'Armstrong', '9 Memorial Junction', '0');\
+INSERT INTO borrower VALUES ('704', '325-18-40', 'Janice', 'Matthews', '967 Mifflin Center', '0');\
+INSERT INTO borrower VALUES ('705', '371-06-40', 'Mildred', 'Nelson', '9598 Union Terrace', '0');\
+INSERT INTO borrower VALUES ('706', '222-63-37', 'Shawn', 'Robertson', '6590 Holy Cross Way', '0');\
+INSERT INTO borrower VALUES ('707', '276-49-38', 'Elizabeth', 'Tucker', '65 Fulton Court', '0');\
+INSERT INTO borrower VALUES ('708', '122-23-93', 'Dorothy', 'Harper', '83 Boyd Center', '0');\
+INSERT INTO borrower VALUES ('709', '323-59-65', 'Jack', 'Woods', '10 Crest Line Pass', '0');\
+INSERT INTO borrower VALUES ('710', '436-60-53', 'Eric', 'Jordan', '154 Redwing Way', '0');\
+INSERT INTO borrower VALUES ('711', '283-97-25', 'Marilyn', 'Taylor', '57 Farmco Park', '0');\
+INSERT INTO borrower VALUES ('712', '248-17-25', 'Timothy', 'Edwards', '109 Larry Road', '0');\
+INSERT INTO borrower VALUES ('713', '637-48-22', 'Carol', 'Welch', '121 Ohio Road', '0');\
+INSERT INTO borrower VALUES ('714', '164-19-45', 'Sandra', 'Reed', '1876 Westend Court', '0');\
+INSERT INTO borrower VALUES ('715', '498-44-86', 'Jason', 'Dunn', '90950 Sherman Way', '0');\
+INSERT INTO borrower VALUES ('716', '741-86-22', 'Paula', 'Jordan', '0 Schurz Lane', '0');\
+INSERT INTO borrower VALUES ('717', '694-72-17', 'Willie', 'Hernandez', '46 Bluejay Crossing', '0');\
+INSERT INTO borrower VALUES ('718', '500-83-05', 'Chris', 'Phillips', '2563 Macpherson Avenue', '0');\
+INSERT INTO borrower VALUES ('719', '849-33-19', 'Juan', 'Hayes', '5 Melvin Junction', '0');\
+INSERT INTO borrower VALUES ('720', '398-41-89', 'Helen', 'Lopez', '2 Maryland Park', '0');\
+INSERT INTO borrower VALUES ('721', '642-59-91', 'Justin', 'Porter', '66 Lerdahl Street', '0');\
+INSERT INTO borrower VALUES ('722', '236-99-93', 'Johnny', 'Garcia', '85 Sloan Street', '0');\
+INSERT INTO borrower VALUES ('723', '590-51-29', 'Katherine', 'Taylor', '00 Carey Alley', '0');\
+INSERT INTO borrower VALUES ('724', '847-74-40', 'Jacqueline', 'Howell', '30 Meadow Valley Trail', '0');\
+INSERT INTO borrower VALUES ('725', '743-83-92', 'Earl', 'Richards', '431 Birchwood Court', '0');\
+INSERT INTO borrower VALUES ('726', '482-29-75', 'Clarence', 'Woods', '7 Schiller Road', '0');\
+INSERT INTO borrower VALUES ('727', '209-78-77', 'Jessica', 'Gonzales', '645 Rutledge Road', '0');\
+INSERT INTO borrower VALUES ('728', '831-59-61', 'Matthew', 'Warren', '4561 Texas Lane', '0');\
+INSERT INTO borrower VALUES ('729', '280-98-55', 'Kathy', 'Smith', '8726 Packers Parkway', '0');\
+INSERT INTO borrower VALUES ('730', '925-63-96', 'Keith', 'Collins', '99196 Surrey Court', '0');\
+INSERT INTO borrower VALUES ('731', '556-38-31', 'Joan', 'Garrett', '43 Scoville Pass', '0');\
+INSERT INTO borrower VALUES ('732', '434-71-80', 'Diane', 'Little', '11 Donald Road', '0');\
+INSERT INTO borrower VALUES ('733', '372-72-34', 'Wanda', 'Mendoza', '34327 Sunbrook Hill', '0');\
+INSERT INTO borrower VALUES ('734', '657-61-44', 'Martin', 'Nguyen', '08974 Bowman Way', '0');\
+INSERT INTO borrower VALUES ('735', '967-28-85', 'Donald', 'Andrews', '8 Kennedy Terrace', '0');\
+INSERT INTO borrower VALUES ('736', '895-97-40', 'Ruth', 'Weaver', '46239 Kipling Terrace', '0');\
+INSERT INTO borrower VALUES ('737', '469-60-91', 'Patricia', 'Gilbert', '43 Mariners Cove Center', '0');\
+INSERT INTO borrower VALUES ('738', '286-87-56', 'Carlos', 'Ford', '0 Dovetail Avenue', '0');\
+INSERT INTO borrower VALUES ('739', '988-74-61', 'Louise', 'Arnold', '55 Mandrake Crossing', '0');\
+INSERT INTO borrower VALUES ('740', '284-97-87', 'Henry', 'Nichols', '08 Oak Valley Park', '0');\
+INSERT INTO borrower VALUES ('741', '186-84-18', 'Kathleen', 'Hayes', '72 Mcguire Road', '0');\
+INSERT INTO borrower VALUES ('742', '458-94-04', 'Bonnie', 'Mccoy', '83175 Cottonwood Way', '0');\
+INSERT INTO borrower VALUES ('743', '419-29-86', 'Jerry', 'Montgomery', '10 Northland Plaza', '0');\
+INSERT INTO borrower VALUES ('744', '219-67-56', 'Jessica', 'Mccoy', '09315 Trailsway Court', '0');\
+INSERT INTO borrower VALUES ('745', '372-21-07', 'Jean', 'Ryan', '801 Hooker Center', '0');\
+INSERT INTO borrower VALUES ('746', '338-73-55', 'Joyce', 'Clark', '360 Hovde Way', '0');\
+INSERT INTO borrower VALUES ('747', '593-87-12', 'Marilyn', 'Cruz', '4 Esker Plaza', '0');\
+INSERT INTO borrower VALUES ('748', '132-70-25', 'Christine', 'Young', '70 Meadow Valley Pass', '0');\
+INSERT INTO borrower VALUES ('749', '795-84-33', 'Marie', 'Phillips', '8 Pleasure Drive', '0');\
+INSERT INTO borrower VALUES ('750', '645-65-77', 'Ann', 'Bryant', '451 Sundown Drive', '0');\
+INSERT INTO borrower VALUES ('751', '338-60-52', 'Bruce', 'Bailey', '1228 Warner Hill', '0');\
+INSERT INTO borrower VALUES ('752', '171-35-45', 'Julie', 'Fields', '0 Hayes Alley', '0');\
+INSERT INTO borrower VALUES ('753', '872-37-77', 'Gregory', 'Schmidt', '998 Merchant Circle', '0');\
+INSERT INTO borrower VALUES ('754', '264-34-83', 'Marilyn', 'Ryan', '877 Forster Lane', '0');\
+INSERT INTO borrower VALUES ('755', '361-84-65', 'Julia', 'Long', '472 Forest Trail', '0');\
+INSERT INTO borrower VALUES ('756', '538-33-36', 'Victor', 'Peterson', '3653 Sage Parkway', '0');\
+INSERT INTO borrower VALUES ('757', '294-41-04', 'Sara', 'Ruiz', '75507 Center Way', '0');\
+INSERT INTO borrower VALUES ('758', '286-27-47', 'Roy', 'Barnes', '4505 Transport Drive', '0');\
+INSERT INTO borrower VALUES ('759', '528-82-32', 'Anthony', 'Carpenter', '61 Karstens Plaza', '0');\
+INSERT INTO borrower VALUES ('760', '774-66-29', 'Jessica', 'Rodriguez', '3969 Springview Court', '0');\
+INSERT INTO borrower VALUES ('761', '147-96-79', 'Craig', 'Carter', '3 Hayes Plaza', '0');\
+INSERT INTO borrower VALUES ('762', '126-49-22', 'Brandon', 'Ellis', '9617 Summit Terrace', '0');\
+INSERT INTO borrower VALUES ('763', '509-31-07', 'Richard', 'Torres', '19723 Cherokee Drive', '0');\
+INSERT INTO borrower VALUES ('764', '335-36-32', 'Janet', 'Mcdonald', '63455 Division Park', '0');\
+INSERT INTO borrower VALUES ('765', '862-42-58', 'Raymond', 'Campbell', '495 Mallard Street', '0');\
+INSERT INTO borrower VALUES ('766', '430-93-41', 'Mark', 'Fields', '03 Menomonie Junction', '0');\
+INSERT INTO borrower VALUES ('767', '936-04-66', 'William', 'Cox', '2 Veith Junction', '0');\
+INSERT INTO borrower VALUES ('768', '795-03-96', 'Ruby', 'Hansen', '759 Mandrake Avenue', '0');\
+INSERT INTO borrower VALUES ('769', '737-18-15', 'Phillip', 'Richards', '29931 Northridge Trail', '0');\
+INSERT INTO borrower VALUES ('770', '286-37-83', 'Richard', 'Jordan', '76466 Milwaukee Lane', '0');\
+INSERT INTO borrower VALUES ('771', '314-52-27', 'Marie', 'Perez', '38 Summer Ridge Court', '0');\
+INSERT INTO borrower VALUES ('772', '574-79-30', 'Cheryl', 'Butler', '68 Maple Court', '0');\
+INSERT INTO borrower VALUES ('773', '835-29-88', 'Michelle', 'Carpenter', '99896 New Castle Trail', '0');\
+INSERT INTO borrower VALUES ('774', '496-59-98', 'Adam', 'Cooper', '74125 Laurel Center', '0');\
+INSERT INTO borrower VALUES ('775', '368-19-93', 'Nancy', 'Shaw', '347 Oak Plaza', '0');\
+INSERT INTO borrower VALUES ('776', '414-22-22', 'Ernest', 'Gomez', '34530 Donald Pass', '0');\
+INSERT INTO borrower VALUES ('777', '888-89-30', 'Wanda', 'Wilson', '3 Rockefeller Point', '0');\
+INSERT INTO borrower VALUES ('778', '572-70-84', 'Melissa', 'Bailey', '94627 Hoard Parkway', '0');\
+INSERT INTO borrower VALUES ('779', '114-71-58', 'Clarence', 'Gray', '797 Merrick Way', '0');\
+INSERT INTO borrower VALUES ('780', '104-43-36', 'Janice', 'Hunter', '3 Sheridan Trail', '0');\
+INSERT INTO borrower VALUES ('781', '329-05-36', 'Raymond', 'Murray', '3083 Crescent Oaks Road', '0');\
+INSERT INTO borrower VALUES ('782', '447-69-93', 'Bruce', 'Hansen', '88200 Johnson Alley', '0');\
+INSERT INTO borrower VALUES ('783', '937-66-79', 'Ryan', 'Mccoy', '27278 American Ash Avenue', '0');\
+INSERT INTO borrower VALUES ('784', '764-89-67', 'Jerry', 'Fowler', '0 Lighthouse Bay Circle', '0');\
+INSERT INTO borrower VALUES ('785', '134-92-46', 'Frank', 'Harper', '8 Fairview Drive', '0');\
+INSERT INTO borrower VALUES ('786', '571-08-16', 'George', 'Garza', '0 Granby Lane', '0');\
+INSERT INTO borrower VALUES ('787', '914-59-14', 'Sharon', 'Olson', '7705 Ridge Oak Plaza', '0');\
+INSERT INTO borrower VALUES ('788', '310-91-20', 'Kathryn', 'Reed', '086 Bunker Hill Way', '0');\
+INSERT INTO borrower VALUES ('789', '925-52-27', 'Randy', 'Weaver', '5 Del Mar Junction', '0');\
+INSERT INTO borrower VALUES ('790', '193-13-78', 'Linda', 'Washington', '8122 Sachtjen Circle', '0');\
+INSERT INTO borrower VALUES ('791', '799-37-49', 'Elizabeth', 'Anderson', '80 Dunning Circle', '0');\
+INSERT INTO borrower VALUES ('792', '981-69-82', 'Henry', 'Kim', '9861 Elmside Crossing', '0');\
+INSERT INTO borrower VALUES ('793', '124-22-83', 'Earl', 'Morales', '16 Manley Pass', '0');\
+INSERT INTO borrower VALUES ('794', '980-98-19', 'Howard', 'Ford', '31553 5th Place', '0');\
+INSERT INTO borrower VALUES ('795', '486-25-90', 'Tammy', 'Fox', '29405 Hauk Road', '0');\
+INSERT INTO borrower VALUES ('796', '765-53-64', 'Sarah', 'Hicks', '38 Lighthouse Bay Pass', '0');\
+INSERT INTO borrower VALUES ('797', '750-87-64', 'Diana', 'Montgomery', '2 Welch Parkway', '0');\
+INSERT INTO borrower VALUES ('798', '796-84-46', 'Joan', 'Boyd', '393 School Plaza', '0');\
+INSERT INTO borrower VALUES ('799', '944-12-96', 'Barbara', 'Simmons', '678 Barnett Point', '0');\
+INSERT INTO borrower VALUES ('800', '604-14-81', 'Keith', 'Carroll', '46912 Veith Place', '0');\
+INSERT INTO borrower VALUES ('801', '554-70-78', 'Ruby', 'Bryant', '0502 Dorton Place', '0');\
+INSERT INTO borrower VALUES ('802', '968-07-86', 'Andrew', 'Holmes', '87963 Darwin Plaza', '0');\
+INSERT INTO borrower VALUES ('803', '848-01-13', 'Juan', 'King', '3344 Schlimgen Point', '0');\
+INSERT INTO borrower VALUES ('804', '522-56-71', 'Michael', 'Warren', '1 Northwestern Road', '0');\
+INSERT INTO borrower VALUES ('805', '263-49-66', 'Randy', 'Wagner', '28585 Iowa Pass', '0');\
+INSERT INTO borrower VALUES ('806', '916-96-28', 'Jose', 'Kelly', '088 Cambridge Trail', '0');\
+INSERT INTO borrower VALUES ('807', '304-18-59', 'Peter', 'Ford', '3 Boyd Point', '0');\
+INSERT INTO borrower VALUES ('808', '381-33-31', 'Peter', 'Edwards', '70349 Hallows Way', '0');\
+INSERT INTO borrower VALUES ('809', '211-11-09', 'Louise', 'Peters', '79475 Morrow Pass', '0');\
+INSERT INTO borrower VALUES ('810', '343-23-09', 'Stephanie', 'Perry', '08750 Forest Dale Road', '0');\
+INSERT INTO borrower VALUES ('811', '792-44-41', 'Lawrence', 'Adams', '38 Forster Terrace', '0');\
+INSERT INTO borrower VALUES ('812', '443-86-24', 'Gregory', 'Hansen', '419 Longview Trail', '0');\
+INSERT INTO borrower VALUES ('813', '797-38-15', 'Ralph', 'Medina', '74 High Crossing Lane', '0');\
+INSERT INTO borrower VALUES ('814', '223-83-86', 'Joan', 'Cooper', '52 Fremont Road', '0');\
+INSERT INTO borrower VALUES ('815', '732-67-67', 'Karen', 'George', '560 Menomonie Plaza', '0');\
+INSERT INTO borrower VALUES ('816', '639-56-12', 'Theresa', 'Cunningham', '8148 Florence Drive', '0');\
+INSERT INTO borrower VALUES ('817', '506-61-70', 'Dennis', 'Young', '378 Carberry Place', '0');\
+INSERT INTO borrower VALUES ('818', '789-55-86', 'Joseph', 'Castillo', '4 Surrey Park', '0');\
+INSERT INTO borrower VALUES ('819', '100-43-94', 'Eugene', 'Fisher', '977 Gina Junction', '0');\
+INSERT INTO borrower VALUES ('820', '622-93-04', 'Elizabeth', 'Medina', '044 Prentice Center', '0');\
+INSERT INTO borrower VALUES ('821', '236-05-83', 'Joyce', 'Arnold', '48306 Moulton Plaza', '0');\
+INSERT INTO borrower VALUES ('822', '294-25-93', 'William', 'Ramos', '20 Red Cloud Trail', '0');\
+INSERT INTO borrower VALUES ('823', '317-84-27', 'Billy', 'Reed', '2 Loftsgordon Alley', '0');\
+INSERT INTO borrower VALUES ('824', '802-25-70', 'Scott', 'Carr', '9 Memorial Place', '0');\
+INSERT INTO borrower VALUES ('825', '713-06-25', 'Doris', 'Carpenter', '55093 Bunting Pass', '0');\
+INSERT INTO borrower VALUES ('826', '863-24-43', 'Aaron', 'Kennedy', '51078 Fisk Parkway', '0');\
+INSERT INTO borrower VALUES ('827', '957-88-25', 'Eugene', 'George', '32186 Katie Park', '0');\
+INSERT INTO borrower VALUES ('828', '971-59-74', 'Marilyn', 'Washington', '7639 Northfield Park', '0');\
+INSERT INTO borrower VALUES ('829', '778-11-23', 'Sara', 'Patterson', '938 Vermont Crossing', '0');\
+INSERT INTO borrower VALUES ('830', '432-34-59', 'Samuel', 'Henry', '031 Hintze Terrace', '0');\
+INSERT INTO borrower VALUES ('831', '110-87-50', 'Phillip', 'Kennedy', '41 Leroy Center', '0');\
+INSERT INTO borrower VALUES ('832', '862-95-31', 'Robin', 'Welch', '4 Texas Trail', '0');\
+INSERT INTO borrower VALUES ('833', '639-00-17', 'Rose', 'Garrett', '2384 Carey Road', '0');\
+INSERT INTO borrower VALUES ('834', '687-26-79', 'Rebecca', 'Meyer', '38 Nelson Lane', '0');\
+INSERT INTO borrower VALUES ('835', '648-00-13', 'Michelle', 'Reid', '7 Sunbrook Circle', '0');\
+INSERT INTO borrower VALUES ('836', '362-56-03', 'Judy', 'Rice', '49031 Saint Paul Avenue', '0');\
+INSERT INTO borrower VALUES ('837', '840-08-87', 'Kevin', 'Carroll', '36 Jana Lane', '0');\
+INSERT INTO borrower VALUES ('838', '268-14-25', 'Kathryn', 'Owens', '664 Clemons Hill', '0');\
+INSERT INTO borrower VALUES ('839', '211-96-50', 'Brian', 'Elliott', '28 Graedel Hill', '0');\
+INSERT INTO borrower VALUES ('840', '704-93-54', 'Keith', 'Alvarez', '73423 Mallard Park', '0');\
+INSERT INTO borrower VALUES ('841', '493-28-08', 'Christopher', 'Hamilton', '42 Johnson Place', '0');\
+INSERT INTO borrower VALUES ('842', '104-87-22', 'Mildred', 'Washington', '093 Reindahl Alley', '0');\
+INSERT INTO borrower VALUES ('843', '634-96-07', 'Maria', 'Patterson', '435 Mockingbird Road', '0');\
+INSERT INTO borrower VALUES ('844', '973-88-00', 'Tammy', 'Romero', '77652 Quincy Junction', '0');\
+INSERT INTO borrower VALUES ('845', '701-06-36', 'Shirley', 'Ellis', '74 Boyd Circle', '0');\
+INSERT INTO borrower VALUES ('846', '948-86-41', 'Gerald', 'Carter', '6829 Aberg Park', '0');\
+INSERT INTO borrower VALUES ('847', '405-84-35', 'Sandra', 'Diaz', '73631 Arapahoe Plaza', '0');\
+INSERT INTO borrower VALUES ('848', '648-26-10', 'Joyce', 'Miller', '2 Annamark Center', '0');\
+INSERT INTO borrower VALUES ('849', '401-78-76', 'Edward', 'Freeman', '415 Di Loreto Plaza', '0');\
+INSERT INTO borrower VALUES ('850', '138-67-03', 'Willie', 'Griffin', '990 Moland Lane', '0');\
+INSERT INTO borrower VALUES ('851', '576-90-52', 'Eugene', 'Gibson', '11945 Delaware Trail', '0');\
+INSERT INTO borrower VALUES ('852', '511-59-79', 'Beverly', 'Carroll', '7263 Mariners Cove Park', '0');\
+INSERT INTO borrower VALUES ('853', '427-26-23', 'Kevin', 'Weaver', '9746 Springview Lane', '0');\
+INSERT INTO borrower VALUES ('854', '981-70-08', 'Diana', 'Collins', '00 Stoughton Pass', '0');\
+INSERT INTO borrower VALUES ('855', '842-92-60', 'Melissa', 'Cole', '405 Lukken Park', '0');\
+INSERT INTO borrower VALUES ('856', '842-48-28', 'Willie', 'Young', '4 Bowman Lane', '0');\
+INSERT INTO borrower VALUES ('857', '420-41-54', 'Juan', 'Nichols', '8095 Grover Point', '0');\
+INSERT INTO borrower VALUES ('858', '571-34-64', 'Kevin', 'Mason', '132 Huxley Street', '0');\
+INSERT INTO borrower VALUES ('859', '977-49-74', 'Ronald', 'Owens', '160 Forster Court', '0');\
+INSERT INTO borrower VALUES ('860', '625-10-02', 'Howard', 'Mason', '725 Shelley Street', '0');\
+INSERT INTO borrower VALUES ('861', '344-02-35', 'Scott', 'Sullivan', '3 Dottie Way', '0');\
+INSERT INTO borrower VALUES ('862', '217-52-93', 'Margaret', 'Payne', '706 Spenser Drive', '0');\
+INSERT INTO borrower VALUES ('863', '676-28-34', 'Ashley', 'Dixon', '07278 Arizona Road', '0');\
+INSERT INTO borrower VALUES ('864', '927-53-61', 'Marilyn', 'Vasquez', '85753 Sommers Parkway', '0');\
+INSERT INTO borrower VALUES ('865', '369-13-21', 'Amanda', 'Olson', '2 Thompson Hill', '0');\
+INSERT INTO borrower VALUES ('866', '275-69-71', 'Heather', 'Fernandez', '18106 Beilfuss Way', '0');\
+INSERT INTO borrower VALUES ('867', '993-11-49', 'Stephanie', 'Diaz', '52331 Monica Drive', '0');\
+INSERT INTO borrower VALUES ('868', '867-83-70', 'Roy', 'Kelly', '7053 Old Gate Alley', '0');\
+INSERT INTO borrower VALUES ('869', '466-06-14', 'Scott', 'Chavez', '3 Kingsford Avenue', '0');\
+INSERT INTO borrower VALUES ('870', '632-92-12', 'Donna', 'Mitchell', '4741 Kenwood Junction', '0');\
+INSERT INTO borrower VALUES ('871', '585-80-27', 'Louis', 'Harris', '2747 Rieder Plaza', '0');\
+INSERT INTO borrower VALUES ('872', '512-23-35', 'Henry', 'Hansen', '2900 Surrey Street', '0');\
+INSERT INTO borrower VALUES ('873', '772-62-30', 'Kathryn', 'Porter', '53 Dapin Parkway', '0');\
+INSERT INTO borrower VALUES ('874', '190-88-75', 'Anne', 'Johnson', '20069 Melvin Center', '0');\
+INSERT INTO borrower VALUES ('875', '329-18-41', 'Todd', 'Taylor', '97238 Onsgard Trail', '0');\
+INSERT INTO borrower VALUES ('876', '654-19-51', 'Julia', 'Fernandez', '34619 Marcy Crossing', '0');\
+INSERT INTO borrower VALUES ('877', '591-02-87', 'Craig', 'Robinson', '30 Sutteridge Point', '0');\
+INSERT INTO borrower VALUES ('878', '299-37-04', 'Nancy', 'Shaw', '5834 Village Crossing', '0');\
+INSERT INTO borrower VALUES ('879', '939-58-31', 'Lawrence', 'Nichols', '6423 Roth Park', '0');\
+INSERT INTO borrower VALUES ('880', '170-66-37', 'Jimmy', 'Diaz', '0301 Oriole Lane', '0');\
+INSERT INTO borrower VALUES ('881', '740-80-43', 'Bobby', 'Mcdonald', '3 Scoville Drive', '0');\
+INSERT INTO borrower VALUES ('882', '953-63-49', 'Jesse', 'Cunningham', '790 Marquette Hill', '0');\
+INSERT INTO borrower VALUES ('883', '200-60-09', 'Gregory', 'Andrews', '361 Sachs Crossing', '0');\
+INSERT INTO borrower VALUES ('884', '499-38-82', 'Tina', 'Rogers', '79 Forest Dale Road', '0');\
+INSERT INTO borrower VALUES ('885', '312-18-81', 'Henry', 'Allen', '9 Pennsylvania Street', '0');\
+INSERT INTO borrower VALUES ('886', '215-99-12', 'Carolyn', 'Gordon', '6 Fuller Avenue', '0');\
+INSERT INTO borrower VALUES ('887', '154-27-12', 'Louise', 'Hudson', '04798 Loeprich Alley', '0');\
+INSERT INTO borrower VALUES ('888', '772-41-55', 'John', 'Vasquez', '52 Darwin Park', '0');\
+INSERT INTO borrower VALUES ('889', '888-06-11', 'Kathryn', 'Graham', '45 Everett Pass', '0');\
+INSERT INTO borrower VALUES ('890', '992-83-58', 'Patricia', 'Perkins', '0 Heffernan Drive', '0');\
+INSERT INTO borrower VALUES ('891', '252-88-45', 'Henry', 'Arnold', '47 Becker Lane', '0');\
+INSERT INTO borrower VALUES ('892', '534-51-90', 'Ruby', 'Bishop', '5 International Point', '0');\
+INSERT INTO borrower VALUES ('893', '292-84-44', 'Phyllis', 'Dunn', '8316 Calypso Court', '0');\
+INSERT INTO borrower VALUES ('894', '144-30-35', 'Louise', 'Wood', '000 Mccormick Plaza', '0');\
+INSERT INTO borrower VALUES ('895', '895-44-12', 'Tammy', 'Shaw', '0 Carey Parkway', '0');\
+INSERT INTO borrower VALUES ('896', '955-03-95', 'Eric', 'Rivera', '466 Tony Circle', '0');\
+INSERT INTO borrower VALUES ('897', '743-94-05', 'Joe', 'Williams', '748 Schlimgen Avenue', '0');\
+INSERT INTO borrower VALUES ('898', '140-10-09', 'Aaron', 'Snyder', '1 American Ash Avenue', '0');\
+INSERT INTO borrower VALUES ('899', '210-06-27', 'Louis', 'Clark', '4284 Norway Maple Lane', '0');\
+INSERT INTO borrower VALUES ('900', '357-34-76', 'Sarah', 'Chavez', '3 Schmedeman Court', '0');\
+INSERT INTO borrower VALUES ('901', '427-38-87', 'Robin', 'Ellis', '67445 Dunning Lane', '0');\
+INSERT INTO borrower VALUES ('902', '315-41-86', 'Jessica', 'Davis', '12957 Independence Drive', '0');\
+INSERT INTO borrower VALUES ('903', '829-97-16', 'Lillian', 'Stone', '919 Judy Way', '0');\
+INSERT INTO borrower VALUES ('904', '347-88-96', 'Ruth', 'Stanley', '1 Warrior Pass', '0');\
+INSERT INTO borrower VALUES ('905', '840-39-18', 'Jesse', 'Duncan', '7787 Haas Hill', '0');\
+INSERT INTO borrower VALUES ('906', '637-53-49', 'Lori', 'Hunter', '39 Swallow Place', '0');\
+INSERT INTO borrower VALUES ('907', '136-04-35', 'Tammy', 'Robinson', '0378 Longview Plaza', '0');\
+INSERT INTO borrower VALUES ('908', '713-24-67', 'James', 'Dunn', '2 Luster Hill', '0');\
+INSERT INTO borrower VALUES ('909', '414-66-25', 'Earl', 'White', '3645 Ramsey Place', '0');\
+INSERT INTO borrower VALUES ('910', '613-21-62', 'Jeremy', 'Rogers', '91121 Moulton Plaza', '0');\
+INSERT INTO borrower VALUES ('911', '733-94-68', 'Earl', 'Chapman', '45 Moulton Junction', '0');\
+INSERT INTO borrower VALUES ('912', '606-73-09', 'Dorothy', 'Miller', '52 Hazelcrest Crossing', '0');\
+INSERT INTO borrower VALUES ('913', '154-97-32', 'Anna', 'Lopez', '49 3rd Terrace', '0');\
+INSERT INTO borrower VALUES ('914', '369-65-42', 'Gary', 'Fuller', '59 Macpherson Crossing', '0');\
+INSERT INTO borrower VALUES ('915', '507-57-23', 'Angela', 'Nguyen', '45542 Rutledge Avenue', '0');\
+INSERT INTO borrower VALUES ('916', '325-17-01', 'Paula', 'Frazier', '916 Maywood Court', '0');\
+INSERT INTO borrower VALUES ('917', '866-10-09', 'Daniel', 'Johnson', '76702 Caliangt Circle', '0');\
+INSERT INTO borrower VALUES ('918', '650-99-33', 'Raymond', 'Burke', '3001 Corscot Drive', '0');\
+INSERT INTO borrower VALUES ('919', '417-25-36', 'Anna', 'Flores', '730 Vera Avenue', '0');\
+INSERT INTO borrower VALUES ('920', '128-67-57', 'Kathleen', 'Reed', '89 Tomscot Street', '0');\
+INSERT INTO borrower VALUES ('921', '412-58-09', 'Linda', 'Garcia', '1 Luster Street', '0');\
+INSERT INTO borrower VALUES ('922', '312-56-28', 'Kevin', 'Turner', '3034 Kipling Drive', '0');\
+INSERT INTO borrower VALUES ('923', '122-17-09', 'Juan', 'Dunn', '18 Oak Drive', '0');\
+INSERT INTO borrower VALUES ('924', '548-70-26', 'Arthur', 'Lane', '79797 Fieldstone Circle', '0');\
+INSERT INTO borrower VALUES ('925', '922-65-94', 'Deborah', 'Medina', '4 Cambridge Park', '0');\
+INSERT INTO borrower VALUES ('926', '380-74-61', 'Lisa', 'Castillo', '856 Mitchell Junction', '0');\
+INSERT INTO borrower VALUES ('927', '148-76-33', 'Louis', 'Rivera', '210 Sunfield Trail', '0');\
+INSERT INTO borrower VALUES ('928', '648-41-90', 'Catherine', 'Hunt', '241 Gulseth Crossing', '0');\
+INSERT INTO borrower VALUES ('929', '253-50-18', 'Bobby', 'Gomez', '53 Kipling Place', '0');\
+INSERT INTO borrower VALUES ('930', '237-32-19', 'Johnny', 'Jenkins', '6757 Buena Vista Park', '0');\
+INSERT INTO borrower VALUES ('931', '304-04-21', 'Richard', 'Sanchez', '6 Bonner Road', '0');\
+INSERT INTO borrower VALUES ('932', '416-32-85', 'Fred', 'Peterson', '723 Emmet Avenue', '0');\
+INSERT INTO borrower VALUES ('933', '731-41-20', 'Gerald', 'Jacobs', '539 Pond Point', '0');\
+INSERT INTO borrower VALUES ('934', '680-37-10', 'Teresa', 'Perry', '67 Porter Center', '0');\
+INSERT INTO borrower VALUES ('935', '358-57-17', 'Joyce', 'Watson', '033 Fieldstone Pass', '0');\
+INSERT INTO borrower VALUES ('936', '399-11-84', 'Antonio', 'Crawford', '94232 Hudson Drive', '0');\
+INSERT INTO borrower VALUES ('937', '263-34-59', 'Shawn', 'Hanson', '88 Prairieview Terrace', '0');\
+INSERT INTO borrower VALUES ('938', '871-14-16', 'Sandra', 'Hayes', '8 Morning Parkway', '0');\
+INSERT INTO borrower VALUES ('939', '651-25-80', 'Jimmy', 'Garrett', '43 Clyde Gallagher Terrace', '0');\
+INSERT INTO borrower VALUES ('940', '484-44-52', 'Antonio', 'Lawrence', '08482 Merry Alley', '0');\
+INSERT INTO borrower VALUES ('941', '983-14-07', 'Marie', 'Medina', '7338 Pierstorff Circle', '0');\
+INSERT INTO borrower VALUES ('942', '716-92-18', 'Juan', 'Allen', '5 Victoria Alley', '0');\
+INSERT INTO borrower VALUES ('943', '309-24-36', 'Gerald', 'Porter', '11934 Upham Point', '0');\
+INSERT INTO borrower VALUES ('944', '776-60-41', 'Todd', 'Brooks', '7838 Moland Plaza', '0');\
+INSERT INTO borrower VALUES ('945', '679-76-75', 'Jean', 'Rice', '48712 Mockingbird Road', '0');\
+INSERT INTO borrower VALUES ('946', '729-59-63', 'Jack', 'Day', '2107 Kipling Plaza', '0');\
+INSERT INTO borrower VALUES ('947', '628-48-37', 'Amy', 'Woods', '5 Shoshone Crossing', '0');\
+INSERT INTO borrower VALUES ('948', '785-13-29', 'Raymond', 'Greene', '55619 Surrey Plaza', '0');\
+INSERT INTO borrower VALUES ('949', '101-97-86', 'Arthur', 'Wright', '158 John Wall Street', '0');\
+INSERT INTO borrower VALUES ('950', '946-46-62', 'Daniel', 'Hunt', '13709 Mariners Cove Center', '0');\
+INSERT INTO borrower VALUES ('951', '481-28-67', 'Julie', 'Hamilton', '6209 Ludington Pass', '0');\
+INSERT INTO borrower VALUES ('952', '864-59-52', 'Diana', 'Garza', '83139 Warrior Parkway', '0');\
+INSERT INTO borrower VALUES ('953', '370-11-11', 'Walter', 'Cruz', '463 Hanover Junction', '0');\
+INSERT INTO borrower VALUES ('954', '850-05-96', 'Mildred', 'Ramirez', '7 Anderson Lane', '0');\
+INSERT INTO borrower VALUES ('955', '475-45-21', 'Jean', 'Gilbert', '769 Colorado Center', '0');\
+INSERT INTO borrower VALUES ('956', '704-23-02', 'Frances', 'Porter', '16 Farwell Park', '0');\
+INSERT INTO borrower VALUES ('957', '847-54-70', 'Jane', 'Carter', '746 East Court', '0');\
+INSERT INTO borrower VALUES ('958', '316-40-27', 'Johnny', 'Perry', '5091 Melrose Court', '0');\
+INSERT INTO borrower VALUES ('959', '973-44-72', 'Donald', 'Powell', '1901 Laurel Pass', '0');\
+INSERT INTO borrower VALUES ('960', '597-54-18', 'Russell', 'Morales', '6 Continental Hill', '0');\
+INSERT INTO borrower VALUES ('961', '853-02-85', 'Earl', 'Smith', '73 Towne Hill', '0');\
+INSERT INTO borrower VALUES ('962', '961-10-26', 'Jane', 'Phillips', '9 Northland Place', '0');\
+INSERT INTO borrower VALUES ('963', '340-38-29', 'Ruby', 'Black', '01580 Main Alley', '0');\
+INSERT INTO borrower VALUES ('964', '650-36-99', 'Teresa', 'Fernandez', '50 Arrowood Circle', '0');\
+INSERT INTO borrower VALUES ('965', '940-61-57', 'Jacqueline', 'Hamilton', '792 Burrows Lane', '0');\
+INSERT INTO borrower VALUES ('966', '136-33-68', 'Anthony', 'Elliott', '82 Harper Lane', '0');\
+INSERT INTO borrower VALUES ('967', '780-32-35', 'Louise', 'Henderson', '58 Southridge Way', '0');\
+INSERT INTO borrower VALUES ('968', '174-47-08', 'Lillian', 'Cruz', '1202 Nevada Crossing', '0');\
+INSERT INTO borrower VALUES ('969', '235-78-14', 'David', 'Davis', '6266 Debs Place', '0');\
+INSERT INTO borrower VALUES ('970', '919-55-80', 'Janice', 'Price', '269 Farragut Trail', '0');\
+INSERT INTO borrower VALUES ('971', '687-90-14', 'Donald', 'Palmer', '12 5th Junction', '0');\
+INSERT INTO borrower VALUES ('972', '535-61-99', 'Donald', 'Washington', '978 Moose Plaza', '0');\
+INSERT INTO borrower VALUES ('973', '328-03-35', 'Jessica', 'Jones', '37 Melrose Court', '0');\
+INSERT INTO borrower VALUES ('974', '608-66-01', 'Amy', 'Coleman', '2562 Pond Junction', '0');\
+INSERT INTO borrower VALUES ('975', '894-17-19', 'Marie', 'Ryan', '4287 Canary Center', '0');\
+INSERT INTO borrower VALUES ('976', '882-93-48', 'Gloria', 'Barnes', '149 Columbus Avenue', '0');\
+INSERT INTO borrower VALUES ('977', '328-50-20', 'Charles', 'Lawrence', '7 Randy Terrace', '0');\
+INSERT INTO borrower VALUES ('978', '179-35-63', 'Patricia', 'Hill', '2506 Ridgeway Drive', '0');\
+INSERT INTO borrower VALUES ('979', '223-32-82', 'Ryan', 'Young', '40252 Lyons Terrace', '0');\
+INSERT INTO borrower VALUES ('980', '504-76-44', 'Willie', 'Woods', '99 Sunbrook Circle', '0');\
+INSERT INTO borrower VALUES ('981', '131-82-68', 'Cynthia', 'Webb', '6016 Leroy Way', '0');\
+INSERT INTO borrower VALUES ('982', '470-80-09', 'Joyce', 'Cox', '5027 Meadow Vale Way', '0');\
+INSERT INTO borrower VALUES ('983', '210-87-66', 'Debra', 'Kim', '303 Bashford Road', '0');\
+INSERT INTO borrower VALUES ('984', '757-76-00', 'Louise', 'Harrison', '13 American Ash Place', '0');\
+INSERT INTO borrower VALUES ('985', '641-17-62', 'Douglas', 'Day', '264 Packers Place', '0');\
+INSERT INTO borrower VALUES ('986', '690-30-63', 'Jane', 'Hughes', '05 Tony Junction', '0');\
+INSERT INTO borrower VALUES ('987', '405-00-79', 'Joan', 'Wagner', '76837 Heath Trail', '0');\
+INSERT INTO borrower VALUES ('988', '697-50-57', 'Joyce', 'Gibson', '0605 Old Shore Avenue', '0');\
+INSERT INTO borrower VALUES ('989', '659-02-33', 'Paula', 'Harrison', '7 Swallow Pass', '0');\
+INSERT INTO borrower VALUES ('990', '647-36-97', 'Bobby', 'Dunn', '785 Graedel Place', '0');\
+INSERT INTO borrower VALUES ('991', '659-27-50', 'Bonnie', 'Ross', '81741 Hallows Plaza', '0');\
+INSERT INTO borrower VALUES ('992', '923-61-22', 'Dennis', 'Wheeler', '8321 Mendota Crossing', '0');\
+INSERT INTO borrower VALUES ('993', '646-30-14', 'Jason', 'Gutierrez', '7 Pearson Way', '0');\
+INSERT INTO borrower VALUES ('994', '968-11-75', 'Diana', 'Spencer', '467 Menomonie Alley', '0');\
+INSERT INTO borrower VALUES ('995', '784-77-60', 'Jessica', 'Thompson', '73 Mandrake Center', '0');\
+INSERT INTO borrower VALUES ('996', '468-32-46', 'Sean', 'Pierce', '07 Laurel Park', '0');\
+INSERT INTO borrower VALUES ('997', '647-49-57', 'Alan', 'Stewart', '74154 Drewry Street', '0');\
+INSERT INTO borrower VALUES ('998', '345-58-94', 'Janice', 'Robinson', '7791 Maple Hill', '0');\
+INSERT INTO borrower VALUES ('999', '504-57-58', 'Barbara', 'Carroll', '5989 4th Avenue', '0');\
+INSERT INTO borrower VALUES ('1000', '362-54-60', 'Lori', 'Mccoy', '71 Evergreen Crossing', '0');\
+}
